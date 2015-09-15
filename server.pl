@@ -15,8 +15,8 @@ sub load_languages {
     my @files = readdir($dh);
     closedir $dh;
 
-    my @dic = grep { s/\.dic$//; } @files;
-    my %aff = grep { s/\.aff$//; $_ => 1 } @files;
+    my @dic = grep s/\.dic$//, @files;
+    my %aff = map { $_ => 1; } grep s/\.aff$//, @files;
 
     for my $dic (@dic) {
 	next unless $aff{$dic};
