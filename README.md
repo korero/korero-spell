@@ -19,6 +19,10 @@ Learn more: [Mojolicious::Guides::Tutorial](http://mojolicio.us/perldoc/Mojolici
 Use [Hypnotoad](http://mojolicio.us/perldoc/Mojo/Server/Hypnotoad)
 which is part of [Mojolicious](http://mojolicio.us/).
 
+```
+hypnotoad server.pl
+```
+
 Verify that it is working by visiting `http://localhost:8080`.  Port
 8080 is the default port for Hypnotoad.
 
