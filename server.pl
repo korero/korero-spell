@@ -50,8 +50,14 @@ post '/check' => sub {
 	    push(@tokens, suggestions_for($word));
 	}
 
-	$last = pos;
+	$last = pos($text);
     }
+
+    # add any remaining stuff
+    if ($last < length($text)) {
+	push(@tokens, substr($text, $last));
+    }
+
     $self->render(template => 'result', result => \@tokens);
 };
 
