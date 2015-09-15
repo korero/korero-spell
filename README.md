@@ -24,17 +24,15 @@ Verify that it is working by visiting `http://localhost:8080`.  Port
 
 If you're using Apache, configure your virtual server to act as a
 proxy and pass requests through to port 8080. Make sure you have
-`mod_proxy` enabled.  Our setup also uses an extra header. Thus, you
-also nead `mod_headers`.
+`mod_proxy` and `mod_proxy_http`enabled.  Our setup also uses an extra
+header. Thus, you also need `mod_headers`.
 
 ```
 sudo a2enmod proxy
+sudo a2enmod proxy_http
 sudo a2enmod headers
-sudo apache2 restart
+sudo service apache2 restart
 ```
-
-Using `a2enmod` should make sure that `proxy.conf` and `headers.conf`
-are linked in `/etc/apache2/mods-enabled`.
 
 Once this works, you need to write a config file for your site. Here's
 ours:
@@ -45,20 +43,21 @@ ours:
     ServerName korero.org
     ServerAlias www.korero.org
     <Proxy *>
-        # http://httpd.apache.org/docs/2.2/mod/mod_proxy.html#access
 	Order deny,allow
-	Deny from all
-	Allow from 192.121.170.192
+	Allow from all
     </Proxy>
     ProxyRequests Off
     ProxyPreserveHost On
-    ProxyPass / http://localhost:8080/ keepalive=On
-    ProxyPassReverse / http://localhost:8080/
+    ProxyPass / http://korero.org:8080/ keepalive=On
+    ProxyPassReverse / http://korero.org:8080/
     RequestHeader set X-Forwarded-Proto "http"
 </VirtualHost>
 ```
 
-Restart Apache gracefully.
+Reload your Apache config using `sudo service apache2 graceful`.
+
+This is based on the
+[Mojolicious Cookbook](http://mojolicio.us/perldoc/Mojolicious/Guides/Cookbook#Apache-mod_proxy).
 
 And finally, if you're using [Monit](https://mmonit.com/monit/) to
 monitor your server, here's an example of how you could set it up
