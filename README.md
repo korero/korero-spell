@@ -21,11 +21,30 @@ Learn more: [Mojolicious::Guides::Tutorial](http://mojolicio.us/perldoc/Mojolici
 2. Text::Hunspell from CPAN
 3. [Mojolicious](http://mojolicio.us/)
 
+
 ## On Debian
 
 ```
 sudo apt-get install libmojolicious-perl libtext-hunspell-perl
 ```
+
+You also need to install some dictionaries. These should all end up in
+`/usr/share/hunspell`. You might want to try something like the
+following:
+
+```
+sudo apt-get install hunspell-an hunspell-ar hunspell-be \
+    hunspell-da hunspell-de-de hunspell-de-at hunspell-de-ch \
+    hunspell-en-us hunspell-en-ca hunspell-eu-es hunspell-fr \
+    hunspell-gl-es hunspell-hu hunspell-kk hunspell-ko hunspell-ml \
+    hunspell-ne hunspell-ro hunspell-ru hunspell-se hunspell-sh \
+    hunspell-sr hunspell-sv-se hunspell-uz hunspell-vi
+```
+
+This will result in files like `de_CH.dic` and `de_CH.aff` in
+`/usr/share/hunspell`. We need both of these files in order to
+recognize a valid language.
+
 
 ## On a Mac using Homebrew
 
