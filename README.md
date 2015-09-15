@@ -2,6 +2,13 @@
 
 1. Hunspell
 2. Text::Hunspell from CPAN
+3. Mojolicious
+
+## On Debian
+
+```
+sudo apt-get install libmojolicious-perl libtext-hunspell-perl
+```
 
 ## On a Mac using Homebrew
 
