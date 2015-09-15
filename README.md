@@ -1,8 +1,25 @@
+# Running It
+
+This application uses [Mojolicious](http://mojolicio.us/).
+While you're developing the application:
+
+```
+morbo server.pl
+```
+
+This will run the server on port 3000. Visit `http://localhost:3000`
+to test it. As soon as you edit the file, `morbo` will restart the
+server. You just need to reload the page to see any changes you made.
+
+Learn more: [Mojolicious::Guides::Tutorial](http://mojolicio.us/perldoc/Mojolicious/Guides/Tutorial).
+
+
+
 # Dependencies
 
 1. Hunspell
 2. Text::Hunspell from CPAN
-3. Mojolicious
+3. [Mojolicious](http://mojolicio.us/)
 
 ## On Debian
 
