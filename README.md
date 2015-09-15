@@ -14,6 +14,69 @@ server. You just need to reload the page to see any changes you made.
 Learn more: [Mojolicious::Guides::Tutorial](http://mojolicio.us/perldoc/Mojolicious/Guides/Tutorial).
 
 
+# Deploying It
+
+Use [Hypnotoad](http://mojolicio.us/perldoc/Mojo/Server/Hypnotoad)
+which is part of [Mojolicious](http://mojolicio.us/).
+
+Verify that it is working by visiting `http://localhost:8080`.  Port
+8080 is the default port for Hypnotoad.
+
+If you're using Apache, configure your virtual server to act as a
+proxy and pass requests through to port 8080. Make sure you have
+`mod_proxy` enabled.  Our setup also uses an extra header. Thus, you
+also nead `mod_headers`.
+
+```
+sudo a2enmod proxy
+sudo a2enmod headers
+sudo apache2 restart
+```
+
+Using `a2enmod` should make sure that `proxy.conf` and `headers.conf`
+are linked in `/etc/apache2/mods-enabled`.
+
+Once this works, you need to write a config file for your site. Here's
+ours:
+
+```
+<VirtualHost *:80>
+    ServerAdmin kensanata@gmail.com
+    ServerName korero.org
+    ServerAlias www.korero.org
+    <Proxy *>
+        # http://httpd.apache.org/docs/2.2/mod/mod_proxy.html#access
+	Order deny,allow
+	Deny from all
+	Allow from 192.121.170.192
+    </Proxy>
+    ProxyRequests Off
+    ProxyPreserveHost On
+    ProxyPass / http://localhost:8080/ keepalive=On
+    ProxyPassReverse / http://localhost:8080/
+    RequestHeader set X-Forwarded-Proto "http"
+</VirtualHost>
+```
+
+Restart Apache gracefully.
+
+And finally, if you're using [Monit](https://mmonit.com/monit/) to
+monitor your server, here's an example of how you could set it up
+including statements to start and stop the server.
+
+```
+## http://www.howtoforge.com/server-monitoring-with-munin-and-monit-on-debian-wheezy-p2
+
+# Only restart when the website is unreachable for 10 minutes!
+check process korero-spell with pidfile /home/alex/korero.org/hypnotoad.pid
+    start program = "/usr/bin/hypnotoad /home/alex/korero.org/server.pl"
+    stop program = "/usr/bin/hypnotoad --stop /home/alex/korero.org/server.pl"
+    if failed host localhost port 8080 type tcp protocol http
+      and request "/" for 5 cycles then restart
+    if totalmem > 500 MB for 5 cycles then restart
+    if 3 restarts within 15 cycles then timeout
+```
+
 
 # Dependencies
 
