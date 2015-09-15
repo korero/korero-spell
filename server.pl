@@ -6,7 +6,24 @@ use utf8;
 
 # plugin 'TagHelpers';
 
-my @languages = qw(en_US);
+my $hunspell_dir = '/usr/share/hunspell';
+my %languages;
+
+sub load_languages {
+    opendir(my $dh, $hunspell_dir) || die "can't opendir $hunspell_dir: $!";
+    my @files = readdir($dh);
+    closedir $dh;
+
+    my @dic = grep { s/\.dic$//; } @files;
+    my %aff = grep { s/\.aff$//; $_ => 1 } @files;
+
+    for my $dic (@dic) {
+	next unless $aff{$dic};
+	my $label = $dic;
+	$label =~ s/_/-/g;
+	$languages{$label} = $dic;
+    }	
+}
 
 get '/' => sub {
     my $self = shift;
@@ -15,14 +32,14 @@ get '/' => sub {
 
 get '/check' => sub {
     my $self = shift;
-    $self->stash(languages => \@languages);
+    $self->stash(languages => [sort keys %languages]);
     $self->render('check');
 };
 
 post '/check' => sub {
     my $self = shift;
     my $text = $self->param('text');
-    my $lang = $self->param('lang') || 'en_US';
+    my $lang = $languages{$self->param('lang')} || 'en_US';
     my $speller = Text::Hunspell->new(
 	"/usr/share/hunspell/$lang.aff",    # Hunspell affix file
 	"/usr/share/hunspell/$lang.dic"     # Hunspell dictionary file
@@ -68,7 +85,9 @@ sub suggestions_for {
     return Mojo::ByteStream->new($html);
 }
 
+load_languages();
 app->start;
+
 __DATA__
 
 @@ index.html.ep
@@ -118,6 +137,7 @@ Check a <%= link_to 'different text' => 'check' %> or go back to <%= link_to 'ma
 <!DOCTYPE html>
 <html>
 <head><title><%= title %></title></head>
+<body>
 <style type="text/css">
 body {
       padding: 1em;
@@ -134,7 +154,6 @@ textarea {
   height: 30em;
 }
 </style>
-<body>
 <%= content %>
 <hr>
 <p>
