@@ -17,7 +17,7 @@ package Korero::Spell;
 use strict;
 use warnings;
 use utf8;
-use CGI qw/-utf8/;
+use CGI qw/-utf8 no_xhtml/;
 use CGI::Carp qw(fatalsToBrowser);
 use Text::Hunspell;
 
@@ -25,8 +25,21 @@ main();
 
 sub main {
   my $q = CGI->new;
-  print $q->header,
-  $q->start_html('hello world'),
-  $q->h1('hello world'),
-  $q->end_html;
+  if ($q->path_info eq '/check') {
+  } else {
+    print $q->header,
+    $q->start_html(-title => 'Korero Spell', -dtd => 'html'),
+    $q->h1('Korero Spell'),
+    $q->p(T('This website allows you to do spell-checking using %s.',
+	  $q->a({-href=>'http://hunspell.sourceforge.net/'}, 'Hunspell')),
+	  T('With it, we\'re trying to show how useful our dictionaries and word lists can be.'),
+	);
+    $q->end_html;
+  }
+}
+
+sub T {
+  my ($template, @args) = @_;
+  # TODO: Translate $template
+  return sprintf($template, @args);
 }
