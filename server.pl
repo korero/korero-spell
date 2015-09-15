@@ -2,6 +2,7 @@
 use Mojolicious::Lite;
 use Mojo::ByteStream;
 use Text::Hunspell;
+use Encode;
 use utf8;
 
 # plugin 'TagHelpers';
@@ -45,7 +46,16 @@ post '/check' => sub {
 	"/usr/share/hunspell/$lang.dic"     # Hunspell dictionary file
 	);
     die unless $speller;
-    
+
+    my $encoding;
+    open(my $fh, '<', "/usr/share/hunspell/$lang.aff");
+    while (my $line = <$fh>) {
+	if ($line =~ /^SET\s+(\S+)/) {
+	    $encoding = $1;
+	    last;
+	}
+    }
+
     # What's a word? $1 is a word.
     my $re;
     $re = qr/(\w+(:?'\w+)*)/ if $lang =~ /^en/; # "isn't it"
@@ -61,10 +71,12 @@ post '/check' => sub {
 	    push(@tokens, $stuff);
 	}
 
-	if ($speller->check($word)) {
+	my $encoded = $word;
+	$encoded = encode($encoding, $word) unless $encoding eq 'UTF-8';
+	if ($speller->check($encoded)) {
 	    push(@tokens, $word);
 	} else {
-	    push(@tokens, suggestions_for($word));
+	    push(@tokens, suggestions_for($encoded, $word));
 	}
 
 	$last = pos($text);
@@ -79,9 +91,13 @@ post '/check' => sub {
 };
 
 sub suggestions_for {
-    my $word = shift;
+    my ($encoded, $word) = @_;
     # FIXME: do something
-    my $html = "<b>$word</b>";
+    my $html = '<span style="border-bottom: 1px dotted #ff0000;padding:1px">'
+	. '<span style="border-bottom: 1px dotted #ff0000;">'
+        . $word
+	. '</span>'
+	. '</span>';
     return Mojo::ByteStream->new($html);
 }
 
