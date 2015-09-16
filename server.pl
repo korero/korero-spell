@@ -18,6 +18,7 @@ my %languages;
 sub load_languages {
   my @files;
   for my $dir (map {glob "'$_'"} @hunspell_dir) {
+    $dir =~ s/^'(.*)'$/$1/;
     opendir(my $dh, $dir) || next;
     push(@files, map {"$dir/$_"} readdir($dh));
     closedir $dh;
