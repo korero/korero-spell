@@ -23,93 +23,93 @@ sub load_languages {
     closedir $dh;
   }
 
-    my @dic = grep s/\.dic$//, @files;
-    my %aff = map { $_ => 1; } grep s/\.aff$//, @files;
+  my @dic = grep s/\.dic$//, @files;
+  my %aff = map { $_ => 1; } grep s/\.aff$//, @files;
 
-    for my $dic (@dic) {
-	next unless $aff{$dic};
-	my $label = $dic;
-	$label =~ s/.*\///;
-	$label =~ s/_/-/g;
-	$languages{$label} = $dic;
-    }
+  for my $dic (@dic) {
+    next unless $aff{$dic};
+    my $label = $dic;
+    $label =~ s/.*\///;
+    $label =~ s/_/-/g;
+    $languages{$label} = $dic;
+  }
 
-    die "Cannot find Hunspell dictionaries in any of the following directories:\n  "
+  die "Cannot find Hunspell dictionaries in any of the following directories:\n  "
       . join("\n  ", @hunspell_dir) . "\n" unless %languages;
 
 }
 
 get '/' => sub {
-    my $self = shift;
-    $self->render('index');
+  my $self = shift;
+  $self->render('index');
 } => 'main';
 
 get '/check' => sub {
-    my $self = shift;
-    $self->stash(languages => [sort keys %languages]);
-    $self->render('check');
+  my $self = shift;
+  $self->stash(languages => [sort keys %languages]);
+  $self->render('check');
 };
 
 post '/check' => sub {
-    my $self = shift;
-    my $text = $self->param('text');
-    my $lang = $self->param('lang') || 'en-US';
-    my $base = $languages{$lang};
-    my $speller = Text::Hunspell->new("$base.aff", "$base.dic");
-    die unless $speller;
+  my $self = shift;
+  my $text = $self->param('text');
+  my $lang = $self->param('lang') || 'en-US';
+  my $base = $languages{$lang};
+  my $speller = Text::Hunspell->new("$base.aff", "$base.dic");
+  die unless $speller;
 
-    my $encoding;
-    open(my $fh, '<', "$base.aff");
-    while (my $line = <$fh>) {
-	if ($line =~ /^SET\s+(\S+)/) {
-	    $encoding = $1;
-	    last;
-	}
+  my $encoding;
+  open(my $fh, '<', "$base.aff");
+  while (my $line = <$fh>) {
+    if ($line =~ /^SET\s+(\S+)/) {
+      $encoding = $1;
+      last;
+    }
+  }
+
+  # What's a word? $1 is a word.
+  my $re;
+  $re = qr/(\w+(:?'\w+)*)/ if $lang =~ /^en/; # "isn't it"
+  $re = qr/(\w+)/ unless $re;
+
+  my @tokens;
+  my $last = 0;
+  while ($text =~ /\G(.*?)$re/gs) {
+    my ($stuff, $word) = ($1, $2);
+
+    # handle the stuff between words
+    if (length($stuff) > 0) {
+      push(@tokens, $stuff);
     }
 
-    # What's a word? $1 is a word.
-    my $re;
-    $re = qr/(\w+(:?'\w+)*)/ if $lang =~ /^en/; # "isn't it"
-    $re = qr/(\w+)/ unless $re;
-
-    my @tokens;
-    my $last = 0;
-    while ($text =~ /\G(.*?)$re/gs) {
-	my ($stuff, $word) = ($1, $2);
-
-	# handle the stuff between words
-	if (length($stuff) > 0) {
-	    push(@tokens, $stuff);
-	}
-
-	my $encoded = $word;
-	$encoded = encode($encoding, $word) unless $encoding eq 'UTF-8';
-	if ($speller->check($encoded)) {
-	    push(@tokens, $word);
-	} else {
-	    push(@tokens, suggestions_for($encoded, $word));
-	}
-
-	$last = pos($text);
+    my $encoded = $word;
+    $encoded = encode($encoding, $word) unless $encoding eq 'UTF-8';
+    if ($speller->check($encoded)) {
+      push(@tokens, $word);
+    } else {
+      push(@tokens, suggestions_for($encoded, $word));
     }
 
-    # add any remaining stuff
-    if ($last < length($text)) {
-	push(@tokens, substr($text, $last));
-    }
+    $last = pos($text);
+  }
 
-    $self->render(template => 'result', result => \@tokens);
+  # add any remaining stuff
+  if ($last < length($text)) {
+    push(@tokens, substr($text, $last));
+  }
+
+  $self->render(template => 'result', result => \@tokens);
 };
 
 sub suggestions_for {
-    my ($encoded, $word) = @_;
-    # FIXME: do something
-    my $html = '<span style="border-bottom: 1px dotted #ff0000;padding:1px">'
-	. '<span style="border-bottom: 1px dotted #ff0000;">'
-        . $word
-	. '</span>'
-	. '</span>';
-    return Mojo::ByteStream->new($html);
+  my ($encoded, $word) = @_;
+  # FIXME: do something
+  my $html = '<span style="border-bottom: 1px dotted #ff0000;padding:1px">'
+      . '<span style="border-bottom: 1px dotted #ff0000;">'
+      . $word
+      . '</span>'
+      . '</span>';
+  return Mojo::ByteStream->new($html);
 }
 
 load_languages();
@@ -170,20 +170,20 @@ body {
       padding: 1em;
 }
 .result {
-  border: 1px solid #333;
-  padding: 0 1ex;
-  font-family: sans-serif;
-  min-height: 20ex;
-  white-space: pre-wrap;
+ border: 1px solid #333;
+   padding: 0 1ex;
+   font-family: sans-serif;
+   min-height: 20ex;
+   white-space: pre-wrap;
 }
 textarea {
-  width: 100%;
-  height: 30em;
+ width: 100%;
+ height: 30em;
 }
 </style>
-<%= content %>
-<hr>
-<p>
-Contact: <a href="mailto:kensanata@gmail.com">Alex Schroeder</a>&#x2003;<a href="https://github.com/korero/korero-spell">Source on GitHub</a>
-</body>
-</html>
+    <%= content %>
+    <hr>
+    <p>
+  Contact: <a href="mailto:kensanata@gmail.com">Alex Schroeder</a>&#x2003;<a href="https://github.com/korero/korero-spell">Source on GitHub</a>
+    </body>
+    </html>
