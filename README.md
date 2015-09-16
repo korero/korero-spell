@@ -112,7 +112,9 @@ This will result in files like `de_CH.dic` and `de_CH.aff` in
 recognize a valid language.
 
 
-## On a Mac using Homebrew
+## On a Mac
+
+### Hunspell using Homebrew
 
 If you're using [Homebrew](http://brew.sh/), `brew install hunspell`
 and note the following:
@@ -136,7 +138,22 @@ The files will all be in
 `/Applications/LibreOffice.app/Contents/share/extensions/dict-*` and
 the files will end in `*.aff` and `*.dic`.
 
-## CPAN Trouble
+### Perl using Perlbrew
+
+I'm using [Perlbrew](http://perlbrew.pl/) to install a new Perl and
+run it alongside the system default. If you follow the instructions,
+you'll end up with the following line in your `~/.bashrc`:
+
+```
+source ~/perl5/perlbrew/etc/bashrc
+```
+
+Just remember that if you write CGI scripts or similar things, you can
+no longer rely on the shebang line `#!/usr/bin/perl` – you'll be using
+something like
+`#!/Users/alex/perl5/perlbrew/perls/perl-5.18.2/bin/perl` instead.
+
+### Text::Hunspell using CPAN
 
 When installing from CPAN, `Text::Hunspell` wouldn't install:
 
@@ -171,3 +188,10 @@ Result: PASS
 alex@Megabombus:~/.cpan/build/Text-Hunspell-2.11-XRrGMO$ make install
 ...
 ```
+
+### Mojolicious using CPAN
+
+```
+cpan Mojolicious
+```
+
