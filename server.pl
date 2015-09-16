@@ -87,7 +87,7 @@ post '/check' => sub {
     if ($speller->check($encoded)) {
       push(@tokens, $word);
     } else {
-      push(@tokens, suggestions_for($self, $encoded, $word));
+      push(@tokens, suggestions_for($self, $speller, $encoding, $encoded, $word));
     }
 
     $last = pos($text);
@@ -102,9 +102,17 @@ post '/check' => sub {
 };
 
 sub suggestions_for {
-  my ($self, $encoded, $word) = @_;
-  # FIXME: do something
-  my $html = $self->render_to_string(template => 'misspelled_word', word => $word);
+  my ($self, $speller, $encoding, $encoded, $word) = @_;
+  my @suggestions = $speller->suggest($encoded);
+  if ($encoding) {
+    for (@suggestions) {
+      $_ = decode($encoding, $_);
+    }
+  }
+  my $html = $self->render_to_string(
+    template => 'misspelled_word',
+    word => $word,
+    suggestions => \@suggestions, );
   return Mojo::ByteStream->new($html);
 }
 
@@ -158,37 +166,70 @@ Check a <%= link_to 'different text' => 'check' %> or go back to <%= link_to 'ma
 
 
 @@ misspelled_word.html.ep
-<span class="misspelled" style="border-bottom: 1px dotted #ff0000;padding:1px;">\
-<span style="border-bottom: 1px dotted #ff0000;">\
-<%= $word %>\
+<span class="misspelled">\
+<span class="suggestions">\
+% for my $suggestion (@$suggestions) {
+<span class="suggestion"><%= $suggestion %></span>\
+% }
 </span>\
+<span class="word"><span><%= $word %></span></span>\
 </span>\
-
 
 @@ layouts/default.html.ep
 <!DOCTYPE html>
 <html>
-<head><title><%= title %></title></head>
-<body>
-<style type="text/css">
+<head>
+<title><%= title %></title>
+%= stylesheet '/korero.css'
+%= stylesheet begin
 body {
-      padding: 1em;
+  padding: 1em;
 }
 .result {
-   border: 1px solid #333;
-   padding: 0 1ex;
-   font-family: sans-serif;
-   min-height: 20ex;
-   white-space: pre-wrap;
+  border: 1px solid #333;
+  padding: 0 1ex;
+  font-family: sans-serif;
+  min-height: 20ex;
+  white-space: pre-wrap;
+}
+/* fake red wave underline */
+.misspelled .word {
+  border-bottom: 1px dotted #ff0000;
+  padding:1px;
+}
+.misspelled .word span {
+  border-bottom: 1px dotted #ff0000;
+}
+/* menu for suggestions */
+.misspelled .suggestions {
+  display: none;
+}
+.misspelled:hover .suggestions {
+  display: block;
+}
+.misspelled .suggestions {
+  position: absolute;
+  border: 1px solid black;
+  background-color: white;
+  margin-top: 0.2ex;
+}
+.misspelled .suggestion {
+  display: block;
+  padding: 0.2ex 1ex;
+}
+.misspelled .suggestion:hover {
+  background-color: #b0e0e6;
 }
 textarea {
  width: 100%;
  height: 30em;
 }
-</style>
-    <%= content %>
-    <hr>
-    <p>
-  Contact: <a href="mailto:kensanata@gmail.com">Alex Schroeder</a>&#x2003;<a href="https://github.com/korero/korero-spell">Source on GitHub</a>
-    </body>
-    </html>
+% end
+</head>
+<body>
+<%= content %>
+<hr>
+<p>
+Contact: <a href="mailto:kensanata@gmail.com">Alex Schroeder</a>&#x2003;<a href="https://github.com/korero/korero-spell">Source on GitHub</a>
+</body>
+</html>
