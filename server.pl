@@ -87,7 +87,7 @@ post '/check' => sub {
     if ($speller->check($encoded)) {
       push(@tokens, $word);
     } else {
-      push(@tokens, suggestions_for($encoded, $word));
+      push(@tokens, suggestions_for($self, $encoded, $word));
     }
 
     $last = pos($text);
@@ -102,13 +102,9 @@ post '/check' => sub {
 };
 
 sub suggestions_for {
-  my ($encoded, $word) = @_;
+  my ($self, $encoded, $word) = @_;
   # FIXME: do something
-  my $html = '<span style="border-bottom: 1px dotted #ff0000;padding:1px">'
-      . '<span style="border-bottom: 1px dotted #ff0000;">'
-      . $word
-      . '</span>'
-      . '</span>';
+  my $html = $self->render_to_string(template => 'misspelled_word', word => $word);
   return Mojo::ByteStream->new($html);
 }
 
@@ -160,6 +156,15 @@ Check a <%= link_to 'different text' => 'check' %> or go back to <%= link_to 'ma
 <%= $token %>\
 % }
 
+
+@@ misspelled_word.html.ep
+<span class="misspelled" style="border-bottom: 1px dotted #ff0000;padding:1px;">\
+<span style="border-bottom: 1px dotted #ff0000;">\
+<%= $word %>\
+</span>\
+</span>\
+
+
 @@ layouts/default.html.ep
 <!DOCTYPE html>
 <html>
@@ -170,7 +175,7 @@ body {
       padding: 1em;
 }
 .result {
- border: 1px solid #333;
+   border: 1px solid #333;
    padding: 0 1ex;
    font-family: sans-serif;
    min-height: 20ex;
