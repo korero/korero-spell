@@ -5,15 +5,23 @@ use Text::Hunspell;
 use Encode;
 use utf8;
 
-# plugin 'TagHelpers';
-
-my $hunspell_dir = '/usr/share/hunspell';
+# directories to look for dictionaries
+my @hunspell_dir = (
+  '/usr/share/hunspell',
+  # Mac
+  '/Library/Spelling/', # ignore ~/Library/Spelling/
+  # Office
+  '/Applications/LibreOffice.app/Contents/share/extensions/dict-*', # will be globbed
+    );
 my %languages;
 
 sub load_languages {
-    opendir(my $dh, $hunspell_dir) || die "can't opendir $hunspell_dir: $!";
-    my @files = readdir($dh);
+  my @files;
+  for my $dir (map {glob "'$_'"} @hunspell_dir) {
+    opendir(my $dh, $dir) || next;
+    push(@files, map {"$dir/$_"} readdir($dh));
     closedir $dh;
+  }
 
     my @dic = grep s/\.dic$//, @files;
     my %aff = map { $_ => 1; } grep s/\.aff$//, @files;
@@ -21,9 +29,14 @@ sub load_languages {
     for my $dic (@dic) {
 	next unless $aff{$dic};
 	my $label = $dic;
+	$label =~ s/.*\///;
 	$label =~ s/_/-/g;
 	$languages{$label} = $dic;
-    }	
+    }
+
+    die "Cannot find Hunspell dictionaries in any of the following directories:\n  "
+      . join("\n  ", @hunspell_dir) . "\n" unless %languages;
+
 }
 
 get '/' => sub {
@@ -40,15 +53,13 @@ get '/check' => sub {
 post '/check' => sub {
     my $self = shift;
     my $text = $self->param('text');
-    my $lang = $languages{$self->param('lang')} || 'en_US';
-    my $speller = Text::Hunspell->new(
-	"/usr/share/hunspell/$lang.aff",    # Hunspell affix file
-	"/usr/share/hunspell/$lang.dic"     # Hunspell dictionary file
-	);
+    my $lang = $self->param('lang') || 'en-US';
+    my $base = $languages{$lang};
+    my $speller = Text::Hunspell->new("$base.aff", "$base.dic");
     die unless $speller;
 
     my $encoding;
-    open(my $fh, '<', "/usr/share/hunspell/$lang.aff");
+    open(my $fh, '<', "$base.aff");
     while (my $line = <$fh>) {
 	if ($line =~ /^SET\s+(\S+)/) {
 	    $encoding = $1;
