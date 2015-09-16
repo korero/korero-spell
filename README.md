@@ -94,6 +94,14 @@ check process korero-spell with pidfile /home/alex/korero.org/hypnotoad.pid
 sudo apt-get install libmojolicious-perl libtext-hunspell-perl
 ```
 
+Note that `libmojolicious-perl` is too old on Debian Wheezy. You can
+try to install it anyway, but if it fails, you'll have to install the
+latest from CPAN:
+
+```
+cpan Mojolicious
+```
+
 You also need to install some dictionaries. These should all end up in
 `/usr/share/hunspell`. You might want to try something like the
 following:
