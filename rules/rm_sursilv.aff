@@ -5,13 +5,17 @@ TRY airentsucldmogphbvfzxqjèéàkòwyüùöêîAIRENTSUCLDMOGPHBVFZXQJÈÉÀKÒ
 FLAG long
 NEEDAFFIX XX
 
-AF 6
+AF 7
 AF XXFsFp  # staila/1: staila, stailas [po:NOUN uf:Gender=Fem]
 AF XXMsMp  # caschiel/2: caschiel, caschiels [po:NOUN uf:Gender=Masc]
 AF XXAd    # abstract/3: abstract, abstracts, abstracta, abstractas [po:ADJ]
 AF XXAv    # biaronz/4: biaronz [po:ADV]
 AF XXVt    # pagar/5: pagar, paghel, pagas, ... [po:VERB uf:Subcat=Tran]
-AF XXFs    # feglia/6: feglia, *feglias [po:NOUN uf:Gender=Fem]
+AF XXIj    # assa/6: assa [po:INTJ]
+AF XXFs    # feglia/7: feglia, *feglias [po:NOUN uf:Gender=Fem]
+
+SFX Ij N 1
+SFX Ij 0 0 . po:INTJ
 
 SFX Vt N 54
 SFX Vt 0 0 . po:VERB uf:Subcat=Tran|VerbForm=Inf
