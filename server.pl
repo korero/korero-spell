@@ -136,7 +136,7 @@ sub suggestions_for {
 
 sub analysis_of {
   my ($self, $speller, $encoding, $encoded, $word) = @_;
-  my $analysis = $speller->analyze($encoded);
+  my $analysis = join("\n", $speller->analyze($encoded));
   $analysis = decode($encoding, $analysis) if $encoding;
   return ['correct', $word, $analysis];
 }
