@@ -160,17 +160,19 @@ Back to the <%= link_to 'main page' => 'main' %>.
 <h1>Korero Spellchecking</h1>
 <p>
 Check a <%= link_to 'different text' => 'check' %> or go back to <%= link_to 'main page' => 'main' %>.
-<p class='result'>
+%# onclick="" added so that iOS will react to :hover (and remove it from the menu)
+<p class='result' onclick="">
 % for my $token (@$result) {
 <%= $token %>\
 % }
 
 
 @@ misspelled_word.html.ep
-<span class="misspelled">\
+%# onclick="" added so that iOS will react to :hover
+<span class="misspelled" onclick="">\
 <span class="suggestions">\
 % for my $suggestion (@$suggestions) {
-<span class="suggestion"><%= $suggestion %></span>\
+<span class="suggestion" onclick=""><%= $suggestion %></span>\
 % }
 </span>\
 <span class="word"><span><%= $word %></span></span>\
@@ -192,6 +194,8 @@ body {
   font-family: sans-serif;
   min-height: 20ex;
   white-space: pre-wrap;
+  // iOS: prevent flash when clicking on the paragraph
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 /* fake red wave underline */
 .misspelled .word {
@@ -202,17 +206,20 @@ body {
   border-bottom: 1px dotted #ff0000;
 }
 /* menu for suggestions */
-.misspelled .suggestions {
-  display: none;
-}
 .misspelled:hover .suggestions {
-  display: block;
+  opacity: 1;
+  visibility:visible;
+  opacity:1;
+  transition-delay:0s;
 }
 .misspelled .suggestions {
   position: absolute;
   border: 1px solid black;
   background-color: white;
-  margin-top: 0.2ex;
+  margin-top: 1.2em;
+  visibility:hidden;
+  opacity:0;
+  transition:visibility 0s linear 1s, opacity 1s linear;
 }
 .misspelled .suggestion {
   display: block;
