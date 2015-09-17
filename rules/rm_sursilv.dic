@@ -1,0 +1,341 @@
+337
+a/2
+abandun/2
+abbadessa/1
+abbazia/1
+abc/2
+abdicaziun/1
+abdomen/2
+abecedari/2
+aber/4
+aberraziun/1
+abersac/2
+abgiudicaziun/1
+abiss/2
+abiturient/2
+ablativ/2
+abluziun/1
+abnegaziun/1
+aboliziun/1
+abominabladad/1
+abominaziun/1
+abonnament/2
+abonnau/2
+abonnent/2
+aborigen/2
+abort/2
+abreviaziun/1
+abrogaziun/1
+absap/2
+abscess/2
+abscheid/2
+absentissem/2
+absentist/2
+absenza/1
+absint/2
+absolutadad/1
+absolutamein/4
+absolutissem/2
+absolutist/2
+absoluziun/1
+absolvent/2
+absorbader/2
+absorpziun/1
+abstenziun/1
+abstenziunissem/2
+abstinenza/1
+abstract/3
+abstracziun/1
+abstrusadad/1
+abundontamein/4
+abus/2
+abusit/2
+academicher/2
+academist/2
+acca/2
+accentuadamein/4
+accidentalmein/4
+activamein/4
+actualmein/4
+adabien/4
+adacar/4
+adanfetg/4
+adansoias/4
+adaquella/4
+adaviert/4
+adempal/4
+adempeil/4
+adempez/4
+ademplat/4
+adenliung/4
+adequatamein/4
+adies/4
+adina/4
+adispir/4
+admirar/5
+adualmein/4
+adumbatten/4
+afuns/4
+agraden/4
+agradgiu/4
+agradneu/4
+agradora/4
+agradsi/4
+agradvi/4
+allegramein/4
+allerta/4
+allura/4
+alluscha/4
+also/4
+alternativamein/4
+alternontamein/4
+amaramein/4
+amauns/4
+ambrusiana/4
+amicablamein/4
+amplamein/4
+amun/4
+amunt/4
+anavon/4
+anavos/4
+andada/4
+andantamein/4
+anen/4
+anenagiu/4
+anenasi/4
+anentanorasi/4
+anenviars/4
+anetgamein/4
+anibutscha/4
+anno/4
+annualmein/4
+anor/4
+anoragiu/4
+anorasi/4
+anorasiviars/4
+anpaletg/4
+anson/4
+anteriuramein/4
+anticipadamein/4
+antruras/4
+anzi/4
+aposta/4
+apparentamein/4
+approfundidamein/4
+approximativamein/4
+aprau/4
+arbitrariamein/4
+ardentamein/4
+artificialmein/4
+aschamein/4
+aschi/4
+aschidadir/4
+aschiditg/4
+aschilala/4
+aschilunsch/4
+aschinavon/4
+aschiprest/4
+aschischi/4
+aschizun/4
+aspramein/4
+atgnamein/4
+atras/4
+atraviers/4
+attentamein/4
+aunc/4
+auncallura/4
+autramein/4
+aval/4
+aver/4
+aviartamein/4
+avoncaduras/4
+avoncaduss/4
+avonmiezdi/4
+avontut/4
+avunda/4
+biaronz/4
+caschiel/2
+feglia/6
+pagar/5
+staila/1
+Cuera	po:PROPN uf:Gender=Fem
+Puntina	po:PROPN uf:Gender=Fem
+NATO	po:PROPN uf:Gender=Fem
+il	st:il po:DET uf:Gender=Masc|Number=Sing
+ils	st:il po:DET uf:Gender=Masc|Number=Plur
+la	st:la po:DET uf:Gender=Fem|Number=Sing
+las	st:la po:DET uf:Gender=Fem|Number=Plur
+jeu	po:PRON uf:Number=Sing|Person=1
+ti	po:PRON uf:Number=Sing|Person=2
+el	po:PRON uf:Gender=Masc|Number=Sing|Person=3
+ella	po:PRON uf:Gender=Fem|Number=Sing|Person=3
+nus	po:PRON uf:Number=Plur|Person=1
+vus	po:PRON uf:Number=Plur|Person=2
+els	po:PRON uf:Gender=Masc|Number=Plur|Person=3
+ellas	po:PRON uf:Gender=Fem|Number=Plur|Person=3
+hai	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
+vai	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
+has	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
+ha	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin
+havein	st:haver po:AUX uf:Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin
+vein	st:haver po:AUX uf:Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin
+haveis	st:haver po:AUX uf:Mood=Ind|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
+veis	st:haver po:AUX uf:Mood=Ind|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
+han	st:haver po:AUX uf:Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin
+hagi	st:haver po:AUX uf:Mood=Sub|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
+hagies	st:haver po:AUX uf:Mood=Sub|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
+hagi	st:haver po:AUX uf:Mood=Sub|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin
+haveien	st:haver po:AUX uf:Mood=Sub|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin
+veien	st:haver po:AUX uf:Mood=Sub|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin
+haveies	st:haver po:AUX uf:Mood=Sub|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
+veies	st:haver po:AUX uf:Mood=Sub|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
+hagien	st:haver po:AUX uf:Mood=Sub|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin
+vevel	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Past|VerbForm=Fin
+vevas	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=2|Tense=Past|VerbForm=Fin
+veva	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin
+vevan	st:haver po:AUX uf:Mood=Ind|Number=Plur|Person=1|Tense=Past|VerbForm=Fin
+vevas	st:haver po:AUX uf:Mood=Ind|Number=Plur|Person=2|Tense=Past|VerbForm=Fin
+vevan	st:haver po:AUX uf:Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin
+havevel	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Past|VerbForm=Fin
+havevas	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=2|Tense=Past|VerbForm=Fin
+haveva	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin
+havevan	st:haver po:AUX uf:Mood=Ind|Number=Plur|Person=1|Tense=Past|VerbForm=Fin
+havevas	st:haver po:AUX uf:Mood=Ind|Number=Plur|Person=2|Tense=Past|VerbForm=Fin
+havevan	st:haver po:AUX uf:Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin
+havevi	st:haver po:AUX uf:Mood=Sub|Number=Sing|Person=1|Tense=Past|VerbForm=Fin
+havevies	st:haver po:AUX uf:Mood=Sub|Number=Sing|Person=2|Tense=Past|VerbForm=Fin
+havevi	st:haver po:AUX uf:Mood=Sub|Number=Sing|Person=3|Tense=Past|VerbForm=Fin
+havevien	st:haver po:AUX uf:Mood=Sub|Number=Plur|Person=1|Tense=Past|VerbForm=Fin
+havevies	st:haver po:AUX uf:Mood=Sub|Number=Plur|Person=2|Tense=Past|VerbForm=Fin
+havevien	st:haver po:AUX uf:Mood=Sub|Number=Plur|Person=3|Tense=Past|VerbForm=Fin
+vevi	st:haver po:AUX uf:Mood=Sub|Number=Sing|Person=1|Tense=Past|VerbForm=Fin
+vevies	st:haver po:AUX uf:Mood=Sub|Number=Sing|Person=2|Tense=Past|VerbForm=Fin
+vevi	st:haver po:AUX uf:Mood=Sub|Number=Sing|Person=3|Tense=Past|VerbForm=Fin
+vevien	st:haver po:AUX uf:Mood=Sub|Number=Plur|Person=1|Tense=Past|VerbForm=Fin
+vevies	st:haver po:AUX uf:Mood=Sub|Number=Plur|Person=2|Tense=Past|VerbForm=Fin
+vevien	st:haver po:AUX uf:Mood=Sub|Number=Plur|Person=3|Tense=Past|VerbForm=Fin
+havess	st:haver po:AUX uf:Mood=Cnd|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
+havesses	st:haver po:AUX uf:Mood=Cnd|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
+havess	st:haver po:AUX uf:Mood=Cnd|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin
+havessen	st:haver po:AUX uf:Mood=Cnd|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin
+havesses	st:haver po:AUX uf:Mood=Cnd|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
+havessen	st:haver po:AUX uf:Mood=Cnd|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin
+vess	st:haver po:AUX uf:Mood=Cnd|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
+vesses	st:haver po:AUX uf:Mood=Cnd|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
+vess	st:haver po:AUX uf:Mood=Cnd|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin
+vessen	st:haver po:AUX uf:Mood=Cnd|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin
+vesses	st:haver po:AUX uf:Mood=Cnd|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
+vessen	st:haver po:AUX uf:Mood=Cnd|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin
+havessi	st:haver po:AUX uf:Mood=Cnd|Number=Sing|Person=1|Tense=Past|VerbForm=Fin
+havessies	st:haver po:AUX uf:Mood=Cnd|Number=Sing|Person=2|Tense=Past|VerbForm=Fin
+havessi	st:haver po:AUX uf:Mood=Cnd|Number=Sing|Person=3|Tense=Past|VerbForm=Fin
+havessien	st:haver po:AUX uf:Mood=Cnd|Number=Plur|Person=1|Tense=Past|VerbForm=Fin
+havessies	st:haver po:AUX uf:Mood=Cnd|Number=Plur|Person=2|Tense=Past|VerbForm=Fin
+havessien	st:haver po:AUX uf:Mood=Cnd|Number=Plur|Person=3|Tense=Past|VerbForm=Fin
+vessi	st:haver po:AUX uf:Mood=Cnd|Number=Sing|Person=1|Tense=Past|VerbForm=Fin
+vessies	st:haver po:AUX uf:Mood=Cnd|Number=Sing|Person=2|Tense=Past|VerbForm=Fin
+vessi	st:haver po:AUX uf:Mood=Cnd|Number=Sing|Person=3|Tense=Past|VerbForm=Fin
+vessien	st:haver po:AUX uf:Mood=Cnd|Number=Plur|Person=1|Tense=Past|VerbForm=Fin
+vessies	st:haver po:AUX uf:Mood=Cnd|Number=Plur|Person=2|Tense=Past|VerbForm=Fin
+vessien	st:haver po:AUX uf:Mood=Cnd|Number=Plur|Person=3|Tense=Past|VerbForm=Fin
+hagies	st:haver po:AUX uf:Mood=Imp|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
+haveies	st:haver po:AUX uf:Mood=Imp|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
+veies	st:haver po:AUX uf:Mood=Imp|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
+giu	st:haver po:AUX uf:Tense=Past|VerbForm=Part
+havend	st:haver po:AUX	uf:VerbForm=Ger
+sun	st:esser po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
+eis	st:esser po:AUX uf:Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
+ei	st:esser po:AUX uf:Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin
+essan	st:esser po:AUX uf:Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin
+essas	st:esser po:AUX uf:Mood=Ind|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
+ein	st:esser po:AUX uf:Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin
+seigi	st:esser po:AUX uf:Mood=Sub|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
+seigies	st:esser po:AUX uf:Mood=Sub|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
+seigi	st:esser po:AUX uf:Mood=Sub|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin
+seigien	st:esser po:AUX uf:Mood=Sub|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin
+seigies	st:esser po:AUX uf:Mood=Sub|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
+seigien	st:esser po:AUX uf:Mood=Sub|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin
+erel	st:esser po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Past|VerbForm=Fin
+eras	st:esser po:AUX uf:Mood=Ind|Number=Sing|Person=2|Tense=Past|VerbForm=Fin
+era	st:esser po:AUX uf:Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin
+eran	st:esser po:AUX uf:Mood=Ind|Number=Plur|Person=1|Tense=Past|VerbForm=Fin
+eras	st:esser po:AUX uf:Mood=Ind|Number=Plur|Person=2|Tense=Past|VerbForm=Fin
+eran	st:esser po:AUX uf:Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin
+fuvel	st:esser po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Past|VerbForm=Fin
+fuvas	st:esser po:AUX uf:Mood=Ind|Number=Sing|Person=2|Tense=Past|VerbForm=Fin
+fuva	st:esser po:AUX uf:Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin
+fuvan	st:esser po:AUX uf:Mood=Ind|Number=Plur|Person=1|Tense=Past|VerbForm=Fin
+fuvas	st:esser po:AUX uf:Mood=Ind|Number=Plur|Person=2|Tense=Past|VerbForm=Fin
+fuvan	st:esser po:AUX uf:Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin
+eri	st:esser po:AUX uf:Mood=Sub|Number=Sing|Person=1|Tense=Past|VerbForm=Fin
+eries	st:esser po:AUX uf:Mood=Sub|Number=Sing|Person=2|Tense=Past|VerbForm=Fin
+eri	st:esser po:AUX uf:Mood=Sub|Number=Sing|Person=3|Tense=Past|VerbForm=Fin
+erien	st:esser po:AUX uf:Mood=Sub|Number=Plur|Person=1|Tense=Past|VerbForm=Fin
+eries	st:esser po:AUX uf:Mood=Sub|Number=Plur|Person=2|Tense=Past|VerbForm=Fin
+erien	st:esser po:AUX uf:Mood=Sub|Number=Plur|Person=3|Tense=Past|VerbForm=Fin
+fuvi	st:esser po:AUX uf:Mood=Sub|Number=Sing|Person=1|Tense=Past|VerbForm=Fin
+fuvies	st:esser po:AUX uf:Mood=Sub|Number=Sing|Person=2|Tense=Past|VerbForm=Fin
+fuvi	st:esser po:AUX uf:Mood=Sub|Number=Sing|Person=3|Tense=Past|VerbForm=Fin
+fuvien	st:esser po:AUX uf:Mood=Sub|Number=Plur|Person=1|Tense=Past|VerbForm=Fin
+fuvies	st:esser po:AUX uf:Mood=Sub|Number=Plur|Person=2|Tense=Past|VerbForm=Fin
+fuvien	st:esser po:AUX uf:Mood=Sub|Number=Plur|Person=3|Tense=Past|VerbForm=Fin
+staus	st:esser po:AUX uf:Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part
+stada	st:esser po:AUX uf:Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part
+stai	st:esser po:AUX uf:Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part
+stadas	st:esser po:AUX uf:Gender=Fem|Number=Plur|Tense=Past|VerbForm=Part
+fuss	st:esser po:AUX uf:Mood=Cnd|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
+fusses	st:esser po:AUX uf:Mood=Cnd|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
+fuss	st:esser po:AUX uf:Mood=Cnd|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin
+fussen	st:esser po:AUX uf:Mood=Cnd|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin
+fusses	st:esser po:AUX uf:Mood=Cnd|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
+fussen	st:esser po:AUX uf:Mood=Cnd|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin
+fussi	st:esser po:AUX uf:Mood=Cnd|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
+fussies	st:esser po:AUX uf:Mood=Cnd|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
+fussi	st:esser po:AUX uf:Mood=Cnd|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin
+fussien	st:esser po:AUX uf:Mood=Cnd|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin
+fussies	st:esser po:AUX uf:Mood=Cnd|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
+fussien	st:esser po:AUX uf:Mood=Cnd|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin
+seigies	st:esser po:AUX uf:Mood=Imp|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
+seigies	st:esser po:AUX uf:Mood=Imp|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
+essend	st:esser po:AUX	uf:VerbForm=Ger
+vegnel	st:vegnir po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
+vegn	st:vegnir po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
+vegnas	st:vegnir po:AUX uf:Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
+vegns	st:vegnir po:AUX uf:Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
+vegn	st:vegnir po:AUX uf:Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin
+vegnin	st:vegnir po:AUX uf:Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin
+vegnis	st:vegnir po:AUX uf:Mood=Ind|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
+vegnan	st:vegnir po:AUX uf:Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin
+vegni	st:vegnir po:AUX uf:Mood=Sub|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
+vegnies	st:vegnir po:AUX uf:Mood=Sub|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
+vegni	st:vegnir po:AUX uf:Mood=Sub|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin
+vegnîen	st:vegnir po:AUX uf:Mood=Sub|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin
+vegnîes	st:vegnir po:AUX uf:Mood=Sub|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
+vegnien	st:vegnir po:AUX uf:Mood=Sub|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin
+vegnevel	st:vegnir po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Past|VerbForm=Fin
+vegnevas	st:vegnir po:AUX uf:Mood=Ind|Number=Sing|Person=2|Tense=Past|VerbForm=Fin
+vegneva	st:vegnir po:AUX uf:Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin
+vegnevan	st:vegnir po:AUX uf:Mood=Ind|Number=Plur|Person=1|Tense=Past|VerbForm=Fin
+vegnevas	st:vegnir po:AUX uf:Mood=Ind|Number=Plur|Person=2|Tense=Past|VerbForm=Fin
+vegnevan	st:vegnir po:AUX uf:Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin
+vegnevi	st:vegnir po:AUX uf:Mood=Sub|Number=Sing|Person=1|Tense=Past|VerbForm=Fin
+vegnevies	st:vegnir po:AUX uf:Mood=Sub|Number=Sing|Person=2|Tense=Past|VerbForm=Fin
+vegnevi	st:vegnir po:AUX uf:Mood=Sub|Number=Sing|Person=3|Tense=Past|VerbForm=Fin
+vegnevien	st:vegnir po:AUX uf:Mood=Sub|Number=Plur|Person=1|Tense=Past|VerbForm=Fin
+vegnevies	st:vegnir po:AUX uf:Mood=Sub|Number=Plur|Person=2|Tense=Past|VerbForm=Fin
+vegnevien	st:vegnir po:AUX uf:Mood=Sub|Number=Plur|Person=3|Tense=Past|VerbForm=Fin
+vegnius	st:vegnir po:AUX uf:Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part
+vegnida	st:vegnir po:AUX uf:Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part
+vegni	st:vegnir po:AUX uf:Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part
+vegnidas	st:vegnir po:AUX uf:Gender=Fem|Number=Plur|Tense=Past|VerbForm=Part
+vegnessel	st:vegnir po:AUX uf:Mood=Cnd|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
+vegness	st:vegnir po:AUX uf:Mood=Cnd|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
+vegnesses	st:vegnir po:AUX uf:Mood=Cnd|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
+vegness	st:vegnir po:AUX uf:Mood=Cnd|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin
+vegnessen	st:vegnir po:AUX uf:Mood=Cnd|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin
+vegnesses	st:vegnir po:AUX uf:Mood=Cnd|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
+vegnessen	st:vegnir po:AUX uf:Mood=Cnd|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin
+neu	st:vegnir po:AUX uf:Mood=Imp|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
+vegni	st:vegnir po:AUX uf:Mood=Imp|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
+vegnent	st:vegnir po:AUX uf:Tense=Pres|VerbForm=Part
+vegnend	st:vegnir po:AUX uf:VerbForm=Ger

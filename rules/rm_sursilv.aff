@@ -1,0 +1,95 @@
+SET UTF-8
+LANG rm_sursilv
+TRY airentsucldmogphbvfzxqjèéàkòwyüùöêîAIRENTSUCLDMOGPHBVFZXQJÈÉÀKÒWYÜÙÖÊÎ-
+
+FLAG long
+NEEDAFFIX XX
+
+AF 6
+AF XXFsFp  # staila/1: staila, stailas [po:NOUN]
+AF XXMsMp  # caschiel/2: caschiel, caschiels [po:NOUN]
+AF XXAd    # abstract/3: abstract, abstracts, abstracta, abstractas [po:ADJ]
+AF XXAv    # biaronz/4: biaronz [po:ADV]
+AF XXVt    # pagar/5: pagar, paghel, pagas, ... [po:VERB uf:Subcat=Tran]
+AF XXFs    # feglia/6: feglia, *feglias [po:NOUN]
+
+SFX Vt N 52
+SFX Vt 0 0 . po:VERB uf:VerbForm=Inf|Subcat=Intr,Tran
+SFX Vt gar ghel . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt gar gas . po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt gar ga . po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt gar ghein . po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt gar gheis . po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt gar gan . po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar el [^g]ar po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar as [^g]ar po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar a [^g]ar po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar ein [^g]ar po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar eis [^g]ar po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar an [^g]ar po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar i [^g]ar po:VERB uf:Mood=Sub|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar ies [^g]ar po:VERB uf:Mood=Sub|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar i [^g]ar po:VERB uf:Mood=Sub|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar eien [^g]ar po:VERB uf:Mood=Sub|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar eies [^g]ar po:VERB uf:Mood=Sub|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar ien [^g]ar po:VERB uf:Mood=Sub|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar avel . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Vt ar avas . po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Vt ar ava . po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Vt ar avan . po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Vt ar avas . po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Vt ar avan . po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Vt ar avi . po:VERB uf:Mood=Sub|Number=Sing|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Vt ar avies . po:VERB uf:Mood=Sub|Number=Sing|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Vt ar avi . po:VERB uf:Mood=Sub|Number=Sing|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Vt ar avien . po:VERB uf:Mood=Sub|Number=Plur|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Vt ar avies . po:VERB uf:Mood=Sub|Number=Plur|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Vt ar avien . po:VERB uf:Mood=Sub|Number=Plur|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Vt ar assel . po:VERB uf:Mood=Cnd|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar ass . po:VERB uf:Mood=Cnd|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar asses . po:VERB uf:Mood=Cnd|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar ass . po:VERB uf:Mood=Cnd|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar assen . po:VERB uf:Mood=Cnd|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar asses . po:VERB uf:Mood=Cnd|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar assen . po:VERB uf:Mood=Cnd|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar assi . po:VERB uf:Mood=Cnd|Number=Sing|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Vt ar assies . po:VERB uf:Mood=Cnd|Number=Sing|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Vt ar assi . po:VERB uf:Mood=Cnd|Number=Sing|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Vt ar assien . po:VERB uf:Mood=Cnd|Number=Plur|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Vt ar assies . po:VERB uf:Mood=Cnd|Number=Plur|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Vt ar assien . po:VERB uf:Mood=Cnd|Number=Plur|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Vt ar a . po:VERB uf:Mood=Imp|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
+SFX Vt ar ei . po:VERB uf:Mood=Imp|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
+SFX Vt ar ont . po:VERB uf:Tense=Pres|VerbForm=Part
+SFX Vt ar au . po:VERB uf:Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part
+SFX Vt ar ada . po:VERB uf:Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part
+SFX Vt ar ai . po:VERB uf:Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part
+SFX Vt ar adas . po:VERB uf:Gender=Fem|Number=Plur|Tense=Past|VerbForm=Part
+SFX Vt ar ond . po:VERB uf:VerbForm=Ger
+
+# abstract --> abstract, abstracta, abstracts, abstractas
+SFX Ad N 4
+SFX Ad 0 0 . po:ADJ uf:Gender=Masc|Number=Sing
+SFX Ad 0 a . po:ADJ uf:Gender=Fem|Number=Sing
+SFX Ad 0 s . po:ADJ uf:Gender=Masc|Number=Plur
+SFX Ad 0 as . po:ADJ uf:Gender=Fem|Number=Plur
+
+# biaronz --> biaronz
+SFX Av N 1
+SFX Av 0 0 . po:ADV
+
+# staila --> staila
+SFX Fs N 1
+SFX Fs    0 0 . po:NOUN uf:Gender=Fem|Number=Sing
+
+# staila --> stailas
+SFX Fp N 1
+SFX Fp    0 s . po:NOUN uf:Gender=Fem|Number=Plur
+
+# caschiel --> caschiel
+SFX Ms N 1
+SFX Ms    0 0 . po:NOUN uf:Gender=Masc|Number=Sing
+
+# caschiel --> caschiels
+SFX Mp N 1
+SFX Mp    0 s . po:NOUN uf:Gender=Masc|Number=Plur
