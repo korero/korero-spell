@@ -152,14 +152,14 @@ __DATA__
 Our emphasis is on minority languages.
 <p>Services:</p>
 <ul>
-<li><%= link_to 'Spellchecking' => 'check' %></li>
+<li><%= link_to 'Spell Checking' => 'check' %></li>
 </ul>
 
 
 @@ check.html.ep
 % layout 'default';
-% title 'Korero Spellchecking';
-<h1>Spellchecking</h1>
+% title 'Korero Spell Checking';
+<h1>Spell Checking</h1>
 <p>
 Back to the <%= link_to 'main page' => 'main' %>.
 <form method="POST" action="/check">
@@ -174,14 +174,14 @@ Back to the <%= link_to 'main page' => 'main' %>.
 
 @@ result.html.ep
 % layout 'default';
-% title 'Korero Spellchecking';
+% title 'Korero Spell Checking';
 %= javascript '/result.js'
 %= javascript begin
 function replace(id, event) {
   document.getElementById(id).textContent = event.target.textContent;
 }
 % end
-<h1>Spellchecking</h1>
+<h1>Spell Checking</h1>
 <p>
 Check a <%= link_to 'different text' => 'check' %> or go back to <%= link_to 'main page' => 'main' %>.
 %# onclick="" added so that iOS will react to :hover (and remove it from the menu)
