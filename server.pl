@@ -4,19 +4,24 @@ use Text::Hunspell;
 use Encode;
 use utf8;
 
-# directories to look for dictionaries
+# Directories to look for dictionaries.
+# Earlier directories have precedence.
 my @hunspell_dir = (
+  # Our own Korero dictionaries
+  'rules',
+  # Default hunspell directory for Debian Wheezy
   '/usr/share/hunspell',
-  # Mac
+  # Mac Homebrew system directory
   '/Library/Spelling/', # ignore ~/Library/Spelling/
-  # Office
+  # Mac Libre Office
   '/Applications/LibreOffice.app/Contents/share/extensions/dict-*', # will be globbed
     );
 our %languages;
 
 sub load_languages {
   my @files;
-  for my $dir (map {glob "'$_'"} @hunspell_dir) {
+  # Reverse directory to make sure precedence is correct.
+  for my $dir (map {glob "'$_'"} reverse @hunspell_dir) {
     $dir =~ s/^'(.*)'$/$1/;
     opendir(my $dh, $dir) || next;
     push(@files, map {"$dir/$_"} readdir($dh));
