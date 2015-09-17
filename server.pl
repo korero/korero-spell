@@ -75,6 +75,7 @@ post '/check' => sub {
 
   my @tokens;
   my $last = 0;
+  my $id = 'word0000';
   while ($text =~ /\G(.*?)$re/gs) {
     my ($stuff, $word) = ($1, $2);
 
@@ -88,7 +89,7 @@ post '/check' => sub {
     if ($speller->check($encoded)) {
       push(@tokens, $word);
     } else {
-      push(@tokens, suggestions_for($self, $speller, $encoding, $encoded, $word));
+      push(@tokens, suggestions_for($self, $speller, $encoding, $encoded, $word, $id++));
     }
 
     $last = pos($text);
@@ -103,7 +104,7 @@ post '/check' => sub {
 };
 
 sub suggestions_for {
-  my ($self, $speller, $encoding, $encoded, $word) = @_;
+  my ($self, $speller, $encoding, $encoded, $word, $id) = @_;
   my @suggestions = $speller->suggest($encoded);
   if ($encoding) {
     for (@suggestions) {
@@ -113,6 +114,7 @@ sub suggestions_for {
   my $html = $self->render_to_string(
     template => 'misspelled_word',
     word => $word,
+    id => $id,
     suggestions => \@suggestions, );
   return Mojo::ByteStream->new($html);
 }
@@ -157,6 +159,12 @@ Back to the <%= link_to 'main page' => 'main' %>.
 @@ result.html.ep
 % layout 'default';
 % title 'Korero Spellchecking';
+%= javascript '/result.js'
+%= javascript begin
+function replace(id, event) {
+  document.getElementById(id).textContent = event.target.textContent;
+}
+% end
 <h1>Korero Spellchecking</h1>
 <p>
 Check a <%= link_to 'different text' => 'check' %> or go back to <%= link_to 'main page' => 'main' %>.
@@ -169,10 +177,10 @@ Check a <%= link_to 'different text' => 'check' %> or go back to <%= link_to 'ma
 
 @@ misspelled_word.html.ep
 %# onclick="" added so that iOS will react to :hover
-<span class="misspelled" onclick="">\
+<span id="<%= $id %>" class="misspelled" onclick="">\
 <span class="suggestions">\
 % for my $suggestion (@$suggestions) {
-<span class="suggestion" onclick=""><%= $suggestion %></span>\
+<span class="suggestion" onclick="javascript:replace('<%= $id %>', event)"><%= $suggestion %></span>\
 % }
 </span>\
 <span class="word"><span><%= $word %></span></span>\
