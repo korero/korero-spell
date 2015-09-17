@@ -12,7 +12,7 @@ my @hunspell_dir = (
   # Office
   '/Applications/LibreOffice.app/Contents/share/extensions/dict-*', # will be globbed
     );
-my %languages;
+our %languages;
 
 sub load_languages {
   my @files;
@@ -99,6 +99,13 @@ post '/check' => sub {
     push(@tokens, substr($text, $last));
   }
 
+  return $self->render(json => {
+    map {
+      my ($word, @suggestions) = @$_;
+      $word => \@suggestions;
+    } grep { ref($_) eq 'ARRAY' } @tokens})
+      if $self->param('format')||'' eq 'json';
+
   $self->render(template => 'result', result => \@tokens);
 };
 
@@ -180,6 +187,7 @@ Check a <%= link_to 'different text' => 'check' %> or go back to <%= link_to 'ma
 <%= $token %>\
 %   }
 % }
+
 
 @@ layouts/default.html.ep
 <!DOCTYPE html>
