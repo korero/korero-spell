@@ -198,6 +198,7 @@ Check a <%= link_to 'different text' => 'check' %> or go back to <%= link_to 'ma
 %= stylesheet begin
 body {
   padding: 1em;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 #logo {
   position: absolute;
