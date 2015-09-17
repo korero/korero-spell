@@ -9,6 +9,7 @@ use utf8;
 # Earlier directories have precedence.
 my $home = Mojo::Home->new;
 $home->detect;
+
 my @hunspell_dir = (
   # Our own Korero dictionaries
   "$home/rules",
@@ -19,9 +20,13 @@ my @hunspell_dir = (
   # Mac Libre Office
   '/Applications/LibreOffice.app/Contents/share/extensions/dict-*', # will be globbed
     );
-our %languages;
+
+# Global variable for all the languages and the location of their files.
+# Initialized using load_languages.
+my %languages;
 
 sub load_languages {
+  my %languages;
   my @files;
   # Reverse directory to make sure precedence is correct.
   for my $dir (map {glob "'$_'"} reverse @hunspell_dir) {
@@ -45,6 +50,7 @@ sub load_languages {
   die "Cannot find Hunspell dictionaries in any of the following directories:\n  "
       . join("\n  ", @hunspell_dir) . "\n" unless %languages;
 
+  return \%languages;
 }
 
 get '/' => sub {
@@ -92,7 +98,7 @@ post '/check' => sub {
     }
 
     my $encoded = $word;
-    $encoded = encode($encoding, $word) unless $encoding eq 'UTF-8';
+    $encoded = encode($encoding, $word) if $encoding and $encoding ne 'UTF-8';
     if ($speller->check($encoded)) {
       push(@tokens, analysis_of($self, $speller, $encoding, $encoded, $word));
     } else {
@@ -135,7 +141,7 @@ sub analysis_of {
   return ['correct', $word, $analysis];
 }
 
-load_languages();
+%languages = %{load_languages()};
 app->start;
 
 __DATA__
