@@ -1,3 +1,35 @@
+# Using It
+
+Using the web interface is very easy and you can do that on the
+[Korero](http://korero.org/) website.
+
+If you want to write an application that needs do do spell checking,
+you can use our JSON interface. Use a POST request and provide the
+following:
+
+* `text` is the text to check
+* `lang` is the language to use
+* `format=json` switches to the output from HTML to JSON
+
+Here's how to test it from the command line:
+
+```
+curl http://korero.org/check --form text="Ein Mensch und eine Fliege im Raum" --form lang="en-US" --form format=json
+```
+
+The Result in this case – given that the text is in German and the language requested is US English:
+
+```json
+{
+  "eine":  ["wine","seine","Seine","Reine","Heine","sine","nine","tine","line","cine","dine","mine","pine","fine","vine"],
+  "Ein":   ["In","Erin","Edin","Evin","Sin","Tin","Din","Gin","Min","Pin","Bin","Yin","Fin","Kin","Win"],
+  "und":   ["ind","undo","fund","Lund","dun","end","and","Ind","undue","under","unit"],
+  "Raum":  ["Ram","Raul","Ra um","Ra-um","Arum","Rum","Trauma","Radium","Maura","Umbra","Roam","RAM"],
+  "im":    ["mi","um","om","in","i","m","ism","aim","rim","dim","imp","him","vim","Sim","Tim"],
+  "Fliege":["Liege","F liege","Flinger","Flier","Fledge","Flicker","Flexed"]
+}
+```
+
 # Running It
 
 This application uses [Mojolicious](http://mojolicio.us/).
