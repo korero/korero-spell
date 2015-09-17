@@ -94,7 +94,7 @@ post '/check' => sub {
     my $encoded = $word;
     $encoded = encode($encoding, $word) unless $encoding eq 'UTF-8';
     if ($speller->check($encoded)) {
-      push(@tokens, $word);
+      push(@tokens, analysis_of($self, $speller, $encoding, $encoded, $word));
     } else {
       push(@tokens, suggestions_for($self, $speller, $encoding, $encoded, $word));
     }
@@ -109,9 +109,9 @@ post '/check' => sub {
 
   return $self->render(json => {
     map {
-      my ($word, @suggestions) = @$_;
+      my ($type, $word, @suggestions) = @$_;
       $word => \@suggestions;
-    } grep { ref($_) eq 'ARRAY' } @tokens})
+    } grep { ref($_) eq 'ARRAY' and $_->[0] eq 'misspelled' } @tokens})
       if $self->param('format')||'' eq 'json';
 
   $self->render(template => 'result', result => \@tokens);
@@ -125,7 +125,14 @@ sub suggestions_for {
       $_ = decode($encoding, $_);
     }
   }
-  return [$word, @suggestions];
+  return ['misspelled', $word, @suggestions];
+}
+
+sub analysis_of {
+  my ($self, $speller, $encoding, $encoded, $word) = @_;
+  my $analysis = $speller->analyze($encoded);
+  $analysis = decode($encoding, $analysis) if $encoding;
+  return ['correct', $word, $analysis];
 }
 
 load_languages();
@@ -180,9 +187,11 @@ Check a <%= link_to 'different text' => 'check' %> or go back to <%= link_to 'ma
 %# onclick="" added so that iOS will react to :hover (and remove it from the menu)
 <p class='result' onclick="">
 % for my $token (@$result) {
-%   if (ref($token) eq 'ARRAY') {
-%     my ($word, @suggestions) = @$token;
-<span id="<%= $id %>" class="misspelled" onclick="">\
+%   if (not ref($token)) {
+<%= $token %>\
+%   } elsif (ref($token) eq 'ARRAY' and $token->[0] eq 'misspelled') {
+%     my ($type, $word, @suggestions) = @$token;
+<span id="<%= $id %>" class="<%= $type %>" onclick="">\
 <span class="suggestions">\
 %     for my $suggestion (@suggestions) {
 <span class="suggestion" onclick="javascript:replace('<%= $id %>', event)"><%= $suggestion %></span>\
@@ -191,8 +200,9 @@ Check a <%= link_to 'different text' => 'check' %> or go back to <%= link_to 'ma
 <span class="word"><span><%= $word %></span></span>\
 </span>\
 %     $id++;
-%   } else {
-<%= $token %>\
+%   } elsif ($token->[0] eq 'correct') {
+%     my ($type, $word, $analysis) = @$token;
+<span class="<%= $type %>" title="<%= $analysis %>"><%= $word %></span>\
 %   }
 % }
 
