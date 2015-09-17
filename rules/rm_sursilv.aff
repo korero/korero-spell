@@ -6,33 +6,35 @@ FLAG long
 NEEDAFFIX XX
 
 AF 6
-AF XXFsFp  # staila/1: staila, stailas [po:NOUN]
-AF XXMsMp  # caschiel/2: caschiel, caschiels [po:NOUN]
+AF XXFsFp  # staila/1: staila, stailas [po:NOUN uf:Gender=Fem]
+AF XXMsMp  # caschiel/2: caschiel, caschiels [po:NOUN uf:Gender=Masc]
 AF XXAd    # abstract/3: abstract, abstracts, abstracta, abstractas [po:ADJ]
 AF XXAv    # biaronz/4: biaronz [po:ADV]
 AF XXVt    # pagar/5: pagar, paghel, pagas, ... [po:VERB uf:Subcat=Tran]
-AF XXFs    # feglia/6: feglia, *feglias [po:NOUN]
+AF XXFs    # feglia/6: feglia, *feglias [po:NOUN uf:Gender=Fem]
 
-SFX Vt N 52
-SFX Vt 0 0 . po:VERB uf:VerbForm=Inf|Subcat=Intr,Tran
-SFX Vt gar ghel . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt N 54
+SFX Vt 0 0 . po:VERB uf:Subcat=Tran|VerbForm=Inf
 SFX Vt gar gas . po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
 SFX Vt gar ga . po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
 SFX Vt gar ghein . po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
 SFX Vt gar gheis . po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
 SFX Vt gar gan . po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar el [^g]ar po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar as [^g]ar po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar a [^g]ar po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar ein [^g]ar po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar eis [^g]ar po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar an [^g]ar po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar i [^g]ar po:VERB uf:Mood=Sub|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar ies [^g]ar po:VERB uf:Mood=Sub|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar i [^g]ar po:VERB uf:Mood=Sub|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar eien [^g]ar po:VERB uf:Mood=Sub|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar eies [^g]ar po:VERB uf:Mood=Sub|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar ien [^g]ar po:VERB uf:Mood=Sub|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar el [^cg]ar po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ccar chel . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt car chel [^c]car po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt gar ghel . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar as [^cg]ar po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar a [^cg]ar po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar ein [^cg]ar po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar eis [^cg]ar po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar an [^cg]ar po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar i [^cg]ar po:VERB uf:Mood=Sub|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar ies [^cg]ar po:VERB uf:Mood=Sub|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar i [^cg]ar po:VERB uf:Mood=Sub|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar eien [^cg]ar po:VERB uf:Mood=Sub|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar eies [^cg]ar po:VERB uf:Mood=Sub|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Vt ar ien [^cg]ar po:VERB uf:Mood=Sub|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
 SFX Vt ar avel . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
 SFX Vt ar avas . po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
 SFX Vt ar ava . po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
