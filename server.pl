@@ -144,7 +144,7 @@ Our emphasis is on minority languages.
 @@ check.html.ep
 % layout 'default';
 % title 'Korero Spellchecking';
-<h1>Korero Spellchecking</h1>
+<h1>Spellchecking</h1>
 <p>
 Back to the <%= link_to 'main page' => 'main' %>.
 <form method="POST" action="/check">
@@ -166,7 +166,7 @@ function replace(id, event) {
   document.getElementById(id).textContent = event.target.textContent;
 }
 % end
-<h1>Korero Spellchecking</h1>
+<h1>Spellchecking</h1>
 <p>
 Check a <%= link_to 'different text' => 'check' %> or go back to <%= link_to 'main page' => 'main' %>.
 %# onclick="" added so that iOS will react to :hover (and remove it from the menu)
@@ -198,6 +198,11 @@ Check a <%= link_to 'different text' => 'check' %> or go back to <%= link_to 'ma
 %= stylesheet begin
 body {
   padding: 1em;
+}
+#logo {
+  position: absolute;
+  top: 0;
+  right: 2em;
 }
 .result {
   border: 1px solid #333;
@@ -244,11 +249,13 @@ textarea {
  height: 30em;
 }
 % end
+<meta name="viewport" content="width=device-width">
 </head>
 <body>
+<p id="logo"><%= link_to 'Korero' => 'main' %></p>
 <%= content %>
 <hr>
 <p>
-Contact: <a href="mailto:kensanata@gmail.com">Alex Schroeder</a>&#x2003;<a href="https://github.com/korero/korero-spell">Source on GitHub</a>
+<a href="mailto:kensanata@gmail.com">Alex Schroeder</a>&#x2003;<a href="https://github.com/korero/korero-spell">Source on GitHub</a>
 </body>
 </html>
