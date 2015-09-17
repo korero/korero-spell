@@ -177,6 +177,7 @@ nus	po:PRON uf:Number=Plur|Person=1
 vus	po:PRON uf:Number=Plur|Person=2
 els	po:PRON uf:Gender=Masc|Number=Plur|Person=3
 ellas	po:PRON uf:Gender=Fem|Number=Plur|Person=3
+haver	po:AUX uf:VerbForm=Inf
 hai	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
 vai	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
 has	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
@@ -247,6 +248,7 @@ haveies	st:haver po:AUX uf:Mood=Imp|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
 veies	st:haver po:AUX uf:Mood=Imp|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
 giu	st:haver po:AUX uf:Tense=Past|VerbForm=Part
 havend	st:haver po:AUX	uf:VerbForm=Ger
+esser	po:AUX uf:VerbForm=Inf
 sun	st:esser po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
 eis	st:esser po:AUX uf:Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
 ei	st:esser po:AUX uf:Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin
@@ -302,6 +304,7 @@ fussien	st:esser po:AUX uf:Mood=Cnd|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin
 seigies	st:esser po:AUX uf:Mood=Imp|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
 seigies	st:esser po:AUX uf:Mood=Imp|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
 essend	st:esser po:AUX	uf:VerbForm=Ger
+vegnir	po:AUX uf:VerbForm=Inf
 vegnel	st:vegnir po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
 vegn	st:vegnir po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
 vegnas	st:vegnir po:AUX uf:Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
