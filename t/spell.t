@@ -43,7 +43,7 @@ $t->post_ok('/check' => form => {
   text => "acca",
   lang => 'rm-sursilv'})
     ->status_is(200)
-    ->content_like(qr/<span class="correct" title=" st:acca po:INTJ">acca<\/span>/,
+    ->content_like(qr/<span class="correct" title=" st:acca po:NOUN uf:Gender=Masc|Number=Sing\n st:acca po:INTJ">acca<\/span>/,
                    '"acca" is correct and has an analysis');
 
 done_testing();
