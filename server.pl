@@ -1,6 +1,5 @@
 #!/usr/bin/env perl
 use Mojolicious::Lite;
-use Mojo::ByteStream;
 use Text::Hunspell;
 use Encode;
 use utf8;
@@ -75,7 +74,7 @@ post '/check' => sub {
 
   my @tokens;
   my $last = 0;
-  my $id = 'word0000';
+  $self->stash(id => 'word0000');
   while ($text =~ /\G(.*?)$re/gs) {
     my ($stuff, $word) = ($1, $2);
 
@@ -89,7 +88,7 @@ post '/check' => sub {
     if ($speller->check($encoded)) {
       push(@tokens, $word);
     } else {
-      push(@tokens, suggestions_for($self, $speller, $encoding, $encoded, $word, $id++));
+      push(@tokens, suggestions_for($self, $speller, $encoding, $encoded, $word));
     }
 
     $last = pos($text);
@@ -104,19 +103,14 @@ post '/check' => sub {
 };
 
 sub suggestions_for {
-  my ($self, $speller, $encoding, $encoded, $word, $id) = @_;
+  my ($self, $speller, $encoding, $encoded, $word) = @_;
   my @suggestions = $speller->suggest($encoded);
   if ($encoding) {
     for (@suggestions) {
       $_ = decode($encoding, $_);
     }
   }
-  my $html = $self->render_to_string(
-    template => 'misspelled_word',
-    word => $word,
-    id => $id,
-    suggestions => \@suggestions, );
-  return Mojo::ByteStream->new($html);
+  return [$word, @suggestions];
 }
 
 load_languages();
@@ -171,20 +165,21 @@ Check a <%= link_to 'different text' => 'check' %> or go back to <%= link_to 'ma
 %# onclick="" added so that iOS will react to :hover (and remove it from the menu)
 <p class='result' onclick="">
 % for my $token (@$result) {
-<%= $token %>\
-% }
-
-
-@@ misspelled_word.html.ep
-%# onclick="" added so that iOS will react to :hover
+%   if (ref($token) eq 'ARRAY') {
+%     my ($word, @suggestions) = @$token;
 <span id="<%= $id %>" class="misspelled" onclick="">\
 <span class="suggestions">\
-% for my $suggestion (@$suggestions) {
+%     for my $suggestion (@suggestions) {
 <span class="suggestion" onclick="javascript:replace('<%= $id %>', event)"><%= $suggestion %></span>\
-% }
+%     }
 </span>\
 <span class="word"><span><%= $word %></span></span>\
 </span>\
+%     $id++;
+%   } else {
+<%= $token %>\
+%   }
+% }
 
 @@ layouts/default.html.ep
 <!DOCTYPE html>
