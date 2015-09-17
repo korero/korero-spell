@@ -14,7 +14,10 @@ following:
 Here's how to test it from the command line:
 
 ```
-curl http://korero.org/check --form text="Ein Mensch und eine Fliege im Raum" --form lang="en-US" --form format=json
+curl http://korero.org/check \
+     --form text="Ein Mensch und eine Fliege im Raum" \
+     --form lang="en-US" \
+	 --form format=json
 ```
 
 The Result in this case – given that the text is in German and the language requested is US English:
