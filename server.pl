@@ -1,14 +1,17 @@
 #!/usr/bin/env perl
 use Mojolicious::Lite;
+use Mojo::Home;
 use Text::Hunspell;
 use Encode;
 use utf8;
 
 # Directories to look for dictionaries.
 # Earlier directories have precedence.
+my $home = Mojo::Home->new;
+$home->detect;
 my @hunspell_dir = (
   # Our own Korero dictionaries
-  'rules',
+  "$home/rules",
   # Default hunspell directory for Debian Wheezy
   '/usr/share/hunspell',
   # Mac Homebrew system directory
