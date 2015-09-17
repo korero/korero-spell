@@ -1,4 +1,4 @@
-337
+344
 a/2
 abandun/2
 abbadessa/1
@@ -163,6 +163,8 @@ staila/1
 Cuera	po:PROPN uf:Gender=Fem
 Puntina	po:PROPN uf:Gender=Fem
 NATO	po:PROPN uf:Gender=Fem
+e	po:CONJ
+ed	st:e po:CONJ
 il	st:il po:DET uf:Gender=Masc|Number=Sing
 ils	st:il po:DET uf:Gender=Masc|Number=Plur
 la	st:la po:DET uf:Gender=Fem|Number=Sing
