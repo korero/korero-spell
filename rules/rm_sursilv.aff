@@ -96,6 +96,7 @@ SFX Fp    0 s . po:NOUN uf:Gender=Fem|Number=Plur
 SFX Ms N 1
 SFX Ms    0 0 . po:NOUN uf:Gender=Masc|Number=Sing
 
-# caschiel --> caschiels
-SFX Mp N 1
-SFX Mp    0 s . po:NOUN uf:Gender=Masc|Number=Plur
+# caschiel --> caschiels; uors --> uors
+SFX Mp N 2
+SFX Mp    0 s [^s] po:NOUN uf:Gender=Masc|Number=Plur
+SFX Mp    s s .    po:NOUN uf:Gender=Masc|Number=Plur
