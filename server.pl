@@ -26,6 +26,7 @@ my @hunspell_dir = (
 my %languages;
 
 sub load_languages {
+  my $app = shift;
   my %languages;
   my @files;
   # Reverse directory to make sure precedence is correct.
@@ -45,6 +46,7 @@ sub load_languages {
     $label =~ s/.*\///;
     $label =~ s/_/-/g;
     $languages{$label} = $dic;
+    $app->log->info("Found dictionary $label");
   }
 
   die "Cannot find Hunspell dictionaries in any of the following directories:\n  "
@@ -141,7 +143,7 @@ sub analysis_of {
   return ['correct', $word, $analysis];
 }
 
-%languages = %{load_languages()};
+%languages = %{load_languages(app)};
 app->start;
 
 __DATA__
