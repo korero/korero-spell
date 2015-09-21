@@ -88,9 +88,10 @@ SFX Av 0 0 . po:ADV
 SFX Fs N 1
 SFX Fs    0 0 . po:NOUN uf:Gender=Fem|Number=Sing
 
-# staila --> stailas
-SFX Fp N 1
-SFX Fp    0 s . po:NOUN uf:Gender=Fem|Number=Plur
+# staila --> stailas; bleis --> bleis
+SFX Fp N 2
+SFX Fp    0 s [^s] po:NOUN uf:Gender=Fem|Number=Plur
+SFX Fp    s s .    po:NOUN uf:Gender=Fem|Number=Plur
 
 # caschiel --> caschiel
 SFX Ms N 1
