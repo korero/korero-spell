@@ -1,4 +1,4 @@
-1198
+1222
 a/2
 a/6
 aba/6
@@ -989,6 +989,11 @@ avisament/2
 avischinaziun/1
 aviul/2
 aviun/2
+Carli/20
+Catrina/19
+Cuera/19
+NATO/19
+Puntina/19
 avoncaduras/4
 avoncaduss/4
 avoncasa/2
@@ -1007,25 +1012,33 @@ avunda/4
 axa/1
 axiom/2
 biaronz/4
+biestgam/23
 bleis/1
 capir/16
+capuns/18
 caschiel/2
 cumpignar/10
+e/22
+ed/22	st:e
+enqualche/29
+extra/28
 feglia/7
+otg/24
 pagar/11
 partir/15
+quest/26
+repressalias/17
+sin/21
 skizzar/8
 spitgar/9
 staila/1
+tgi/27
+tschienavel/25
 tuccar/12
+u/22
 uors/2
 valer/13
 vender/14
-Cuera	po:PROPN uf:Gender=Fem
-Puntina	po:PROPN uf:Gender=Fem
-NATO	po:PROPN uf:Gender=Fem
-e	po:CONJ
-ed	st:e po:CONJ
 il	st:il po:DET uf:Gender=Masc|Number=Sing
 ils	st:il po:DET uf:Gender=Masc|Number=Plur
 la	st:la po:DET uf:Gender=Fem|Number=Sing

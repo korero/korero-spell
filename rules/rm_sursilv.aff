@@ -5,7 +5,7 @@ TRY airentsucldmogphbvfzxqjèéàkòwyüùöêîAIRENTSUCLDMOGPHBVFZXQJÈÉÀKÒ
 FLAG long
 NEEDAFFIX XX
 
-AF 16
+AF 29
 AF XXFsFp    # staila/1: staila, stailas [po:NOUN uf:Gender=Fem]
 AF XXMsMp    # caschiel/2: caschiel, caschiels [po:NOUN uf:Gender=Masc]
 AF XXAd      # abstract/3: abstract, abstracts, abstracta, abstractas [po:ADJ]
@@ -22,6 +22,19 @@ AF XXTaTh    # valer/13: val/valel, valas, vala, valein, valeis, valan (transiti
 AF XXTaTi    # vender/14: vend/vendel, vendas, venda, vendein/vendin, vendeis/vendis, vendan (transitive)
 AF XXTaTj    # partir/15: part/partel, partas, parta, partin, partis, partan (transitive)
 AF XXTaTk    # capir/16: capesch/capeschel, capescha, capescha, capin, capis, capeschan (transitive)
+AF XXFP      # repressalias/17: [po:NOUN uf:Gender=Fem|Number=Plur]
+AF XXMP      # capuns/18: [po:NOUN uf:Gender=Masc|Number=Plur]
+AF XXPf      # Catrina/19: [po:PROPN uf:Gender=Fem]
+AF XXPm      # Carli/20: [po:PROPN uf:Gender=Masc]
+AF XXAp      # sin/21: [po:ADP]
+AF XXCj      # u/22: [po:CONJ]
+AF XXMs      # biestgam/23: biestgam, *biestgams [po:NOUN uf:Gender=Masc]
+AF XXCn      # otg/24: [po:NUM uf:NumType=Card]
+AF XXAo      # tschienavel/25: [po:Adj uf:NumType=Ord]
+AF XXPd      # quest/26: quest, questa, quests, questas [po:PRON PronType=Dem]
+AF XXPi      # tgi/27: [po:PRON PronType=Int]
+AF XXAi      # extra/28: extra, extra, extra, extra (invariable adjective)
+AF XXPj      # enqualche/29: [po:PRON PronType=Ind]
 
 # Transitive verbs: Forms shared by all verb classes
 SFX Ta N 1
@@ -147,6 +160,22 @@ SFX Ad 0 a . po:ADJ uf:Gender=Fem|Number=Sing
 SFX Ad 0 s . po:ADJ uf:Gender=Masc|Number=Plur
 SFX Ad 0 as . po:ADJ uf:Gender=Fem|Number=Plur
 
+# Invariable adjectives: extra
+# extra, extra, extra, extra (all forms are identical)
+SFX Ai N 4
+SFX Ai 0 0 . po:ADJ uf:Gender=Masc|Number=Sing
+SFX Ai 0 0 . po:ADJ uf:Gender=Fem|Number=Sing
+SFX Ai 0 0 . po:ADJ uf:Gender=Masc|Number=Plur
+SFX Ai 0 0 . po:ADJ uf:Gender=Fem|Number=Plur
+
+# Ordinal adjectives: tschienavel
+# tschienavel, tschienavela, tschienavels, tschienavelas
+SFX Ao N 4
+SFX Ao 0 0 . po:ADJ uf:Gender=Masc|NumType=Ord|Number=Sing
+SFX Ao 0 a . po:ADJ uf:Gender=Fem|NumType=Ord|Number=Sing
+SFX Ao 0 s . po:ADJ uf:Gender=Masc|NumType=Ord|Number=Plur
+SFX Ao 0 as . po:ADJ uf:Gender=Fem|NumType=Ord|Number=Plur
+
 # Adverbs: biaronz
 SFX Av N 1
 SFX Av 0 0 . po:ADV
@@ -160,15 +189,59 @@ SFX Fp N 2
 SFX Fp    0 s [^s] po:NOUN uf:Gender=Fem|Number=Plur
 SFX Fp    s s .    po:NOUN uf:Gender=Fem|Number=Plur
 
+# Feminine nouns, plural only: repressalias
+SFX FP N 1
+SFX FP 0 0 . po:NOUN uf:Gender=Fem|Number=Plur
+
 # Masculine nouns, singular: caschiel
 SFX Ms N 1
 SFX Ms    0 0 . po:NOUN uf:Gender=Masc|Number=Sing
 
-# Masculine nounds, plural: caschiel --> caschiels; uors --> uors
+# Masculine nouns, plural: caschiel --> caschiels; uors --> uors
 SFX Mp N 2
 SFX Mp    0 s [^s] po:NOUN uf:Gender=Masc|Number=Plur
 SFX Mp    s s .    po:NOUN uf:Gender=Masc|Number=Plur
 
+# Masculine nouns, plural only: capuns
+SFX MP N 1
+SFX MP 0 0 . po:NOUN uf:Gender=Masc|Number=Plur
+
+# Adpositions/prepositions: ADP
+SFX Ap N 1
+SFX Ap 0 0 . po:ADP
+
+# Conjuctions: CONJ
+SFX Cj N 1
+SFX Cj 0 0 . po:CONJ
+
+# Cardinal number: otg
+SFX Cn N 1
+SFX Cn 0 0 . po:NUM uf:NumType=Card
+
 # Interjections: assa
 SFX Ij N 1
 SFX Ij 0 0 . po:INTJ
+
+# Demonstrative pronoun: quest
+# quest, questa, quests, questas
+SFX Pd N 4
+SFX Pd 0 0 . po:PRON uf:Gender=Masc|Number=Sing|PronType=Dem
+SFX Pd 0 a . po:PRON uf:Gender=Fem|Number=Sing|PronType=Dem
+SFX Pd 0 s . po:PRON uf:Gender=Masc|Number=Plur|PronType=Dem
+SFX Pd 0 as . po:PRON uf:Gender=Fem|Number=Plur|PronType=Dem
+
+# Interrogative pronoun: tgi
+SFX Pi N 1
+SFX Pi 0 0 . po:PRON uf:PronType=Int
+
+# Indeterminite pronoun: enqualche
+SFX Pj N 1
+SFX Pj 0 0 . po:PRON uf:PronType=Ind
+
+# Proper noun, feminine: Catrina
+SFX Pf N 1
+SFX Pf 0 0 . po:PROPN uf:Gender=Fem
+
+# Proper noun, masculine: Carli
+SFX Pm N 1
+SFX Pm 0 0 . po:PROPN uf:Gender=Masc
