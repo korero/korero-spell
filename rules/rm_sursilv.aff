@@ -5,99 +5,170 @@ TRY airentsucldmogphbvfzxqjèéàkòwyüùöêîAIRENTSUCLDMOGPHBVFZXQJÈÉÀKÒ
 FLAG long
 NEEDAFFIX XX
 
-AF 7
-AF XXFsFp  # staila/1: staila, stailas [po:NOUN uf:Gender=Fem]
-AF XXMsMp  # caschiel/2: caschiel, caschiels [po:NOUN uf:Gender=Masc]
-AF XXAd    # abstract/3: abstract, abstracts, abstracta, abstractas [po:ADJ]
-AF XXAv    # biaronz/4: biaronz [po:ADV]
-AF XXVt    # pagar/5: pagar, paghel, pagas, ... [po:VERB uf:Subcat=Tran]
-AF XXIj    # assa/6: assa [po:INTJ]
-AF XXFs    # feglia/7: feglia, *feglias [po:NOUN uf:Gender=Fem]
+AF 16
+AF XXFsFp    # staila/1: staila, stailas [po:NOUN uf:Gender=Fem]
+AF XXMsMp    # caschiel/2: caschiel, caschiels [po:NOUN uf:Gender=Masc]
+AF XXAd      # abstract/3: abstract, abstracts, abstracta, abstractas [po:ADJ]
+AF XXAv      # biaronz/4: biaronz [po:ADV]
+AF XXTaTb    # admirar/5: admir/admirel, admiras, admira, ... (transitive)
+AF XXIj      # assa/6: assa [po:INTJ]
+AF XXFs      # feglia/7: feglia, *feglias [po:NOUN uf:Gender=Fem]
+AF XXTaTc    # skizzar/8: skizz/skizzel, skizzas, skizzescha, ... (transitive)
+AF XXTaTd    # spetgar/9: spetg/spetgel, spetgas, spetga, ... (transitive)
+AF XXTaTe    # cumpignar/10: cumpogn(el), cumpognas, cumpogna, cumpignais, ... (transitive)
+AF XXTaTf    # pagar/11: pag/paghel, pagas, paga, paghein, pagheis, pagan (transitive)
+AF XXTaTg    # tuccar/12: tucc/tuchel, tuccas, tucca, tuchein, tucheis, tuccan (transitive)
+AF XXTaTh    # valer/13: val/valel, valas, vala, valein, valeis, valan (transitive)
+AF XXTaTi    # vender/14: vend/vendel, vendas, venda, vendein/vendin, vendeis/vendis, vendan (transitive)
+AF XXTaTj    # partir/15: part/partel, partas, parta, partin, partis, partan (transitive)
+AF XXTaTk    # capir/16: capesch/capeschel, capescha, capescha, capin, capis, capeschan (transitive)
 
-SFX Ij N 1
-SFX Ij 0 0 . po:INTJ
+# Transitive verbs: Forms shared by all verb classes
+SFX Ta N 1
+SFX Ta 0 0 . po:VERB uf:Subcat=Tran|VerbForm=Inf
 
-SFX Vt N 54
-SFX Vt 0 0 . po:VERB uf:Subcat=Tran|VerbForm=Inf
-SFX Vt gar gas . po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt gar ga . po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt gar ghein . po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt gar gheis . po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt gar gan . po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar el [^cg]ar po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ccar chel . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt car chel [^c]car po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt gar ghel . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar as [^cg]ar po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar a [^cg]ar po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar ein [^cg]ar po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar eis [^cg]ar po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar an [^cg]ar po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar i [^cg]ar po:VERB uf:Mood=Sub|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar ies [^cg]ar po:VERB uf:Mood=Sub|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar i [^cg]ar po:VERB uf:Mood=Sub|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar eien [^cg]ar po:VERB uf:Mood=Sub|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar eies [^cg]ar po:VERB uf:Mood=Sub|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar ien [^cg]ar po:VERB uf:Mood=Sub|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar avel . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
-SFX Vt ar avas . po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
-SFX Vt ar ava . po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
-SFX Vt ar avan . po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
-SFX Vt ar avas . po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
-SFX Vt ar avan . po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
-SFX Vt ar avi . po:VERB uf:Mood=Sub|Number=Sing|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
-SFX Vt ar avies . po:VERB uf:Mood=Sub|Number=Sing|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
-SFX Vt ar avi . po:VERB uf:Mood=Sub|Number=Sing|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
-SFX Vt ar avien . po:VERB uf:Mood=Sub|Number=Plur|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
-SFX Vt ar avies . po:VERB uf:Mood=Sub|Number=Plur|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
-SFX Vt ar avien . po:VERB uf:Mood=Sub|Number=Plur|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
-SFX Vt ar assel . po:VERB uf:Mood=Cnd|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar ass . po:VERB uf:Mood=Cnd|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar asses . po:VERB uf:Mood=Cnd|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar ass . po:VERB uf:Mood=Cnd|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar assen . po:VERB uf:Mood=Cnd|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar asses . po:VERB uf:Mood=Cnd|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar assen . po:VERB uf:Mood=Cnd|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Vt ar assi . po:VERB uf:Mood=Cnd|Number=Sing|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
-SFX Vt ar assies . po:VERB uf:Mood=Cnd|Number=Sing|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
-SFX Vt ar assi . po:VERB uf:Mood=Cnd|Number=Sing|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
-SFX Vt ar assien . po:VERB uf:Mood=Cnd|Number=Plur|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
-SFX Vt ar assies . po:VERB uf:Mood=Cnd|Number=Plur|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
-SFX Vt ar assien . po:VERB uf:Mood=Cnd|Number=Plur|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
-SFX Vt ar a . po:VERB uf:Mood=Imp|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
-SFX Vt ar ei . po:VERB uf:Mood=Imp|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
-SFX Vt ar ont . po:VERB uf:Tense=Pres|VerbForm=Part
-SFX Vt ar au . po:VERB uf:Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part
-SFX Vt ar ada . po:VERB uf:Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part
-SFX Vt ar ai . po:VERB uf:Gender=Masc|Number=Plur|Tense=Past|VerbForm=Part
-SFX Vt ar adas . po:VERB uf:Gender=Fem|Number=Plur|Tense=Past|VerbForm=Part
-SFX Vt ar ond . po:VERB uf:VerbForm=Ger
+# Transitive verbs: admirar
+# - Ind Pres: admir/admirel, admiras, admira, admirein, admireis, admiran
+SFX Tb N 7
+SFX Tb ar 0 . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tb ar el . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tb ar as . po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tb ar a . po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tb ar ein . po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tb ar eis . po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tb ar an . po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
 
-# abstract --> abstract, abstracta, abstracts, abstractas
+# Transitive verbs: skizzar
+# - Ind Pres: skizz/skizzel, skizzas, skizzescha, skizzein, skizzeis, skizzeschan
+SFX Tc N 7
+SFX Tc ar 0 . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tc ar el . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tc ar as . po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tc ar escha . po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tc ar ein . po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tc ar eis . po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tc ar eschan . po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+
+# Transitive verbs: spitgar
+# - Ind Pres: spetg/spetgel, spetgas, spetga, spitgein, spitgeis, spetgan
+SFX Td N 7
+SFX Td itgar etg . uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Td itgar etgel . uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Td itgar etgas . uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Td itgar etga . uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Td itgar itgein . uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Td itgar itgeis . uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Td itgar etgan . uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+
+# Transitive verbs: cumpignar
+# - Ind Pres: compogn/cumpognel, cumpognas, cumpogna, cumpignein, cumpigneis, cumpognan
+SFX Te N 7
+SFX Te ignar ogn . uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Te ignar ognel . uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Te ignar ognas . uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Te ignar ogna . uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Te ignar ignein . uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Te ignar igneis . uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Te ignar ognan . uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+
+# Transitive verbs: pagar
+# - Ind Pres: pag/paghel, pagas, paga, paghein, pagheis, pagan
+SFX Tf N 7
+SFX Tf ar 0 . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tf ar hel . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tf ar as . po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tf ar a . po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tf ar hein . po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tf ar heis . po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tf ar an . po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+
+# Transitive verbs: tuccar
+# - Ind Pres: tucc/tuchel, tuccas, tucca, tuchein, tucheis, tuccan
+SFX Tg N 7
+SFX Tg ccar cc . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tg ccar chel . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tg ccar ccas . po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tg ccar cca . po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tg ccar chein . po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tg ccar cheis . po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tg ccar ccan . po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+
+# Transitive verbs: valer (TODO: Find an example that is actually transitive)
+# - Ind Pres: val/valel, valas, vala, valein, valeis, valan
+SFX Th N 7
+SFX Th er 0 . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Th er el . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Th er as . po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Th er a . po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Th er ein . po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Th er eis . po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Th er an . po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+
+# Transitive verbs: vender
+# - Ind Pres: vend/vendel, vendas, venda, vendein/vendin, vendeis/vendis, vendan (transitive)
+SFX Ti N 9
+SFX Ti er 0 . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Ti er el . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Ti er as . po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Ti er a . po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Ti er ein . po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Ti er in . po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Ti er eis . po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Ti er is . po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Ti er an . po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+
+# Transitive verbs: partir (TODO: Find an example that is actually transitive)
+# - Ind Pres: part/partel, partas, parta, partin, partis, partan
+SFX Tj N 7
+SFX Tj ir 0 . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tj ir el . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tj ir as . po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tj ir a . po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tj ir in . po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tj ir is . po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tj ir an . po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+
+# Transitive verbs: capir
+#- Ind Pres: capesch/capeschel, capescha, capescha, capin, capis, capeschan
+SFX Tk N 7
+SFX Tk ir esch . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tk ir eschel . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tk ir eschas . po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tk ir escha . po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tk ir in . po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tk ir is . po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tk ir eschan . po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+
+# Adjectives: abstract
+# abstract, abstracta, abstracts, abstractas
 SFX Ad N 4
 SFX Ad 0 0 . po:ADJ uf:Gender=Masc|Number=Sing
 SFX Ad 0 a . po:ADJ uf:Gender=Fem|Number=Sing
 SFX Ad 0 s . po:ADJ uf:Gender=Masc|Number=Plur
 SFX Ad 0 as . po:ADJ uf:Gender=Fem|Number=Plur
 
-# biaronz --> biaronz
+# Adverbs: biaronz
 SFX Av N 1
 SFX Av 0 0 . po:ADV
 
-# staila --> staila
+# Feminine nouns, singular: staila
 SFX Fs N 1
 SFX Fs    0 0 . po:NOUN uf:Gender=Fem|Number=Sing
 
-# staila --> stailas; bleis --> bleis
+# Feminine nouns, plural: staila --> stailas; bleis --> bleis
 SFX Fp N 2
 SFX Fp    0 s [^s] po:NOUN uf:Gender=Fem|Number=Plur
 SFX Fp    s s .    po:NOUN uf:Gender=Fem|Number=Plur
 
-# caschiel --> caschiel
+# Masculine nouns, singular: caschiel
 SFX Ms N 1
 SFX Ms    0 0 . po:NOUN uf:Gender=Masc|Number=Sing
 
-# caschiel --> caschiels; uors --> uors
+# Masculine nounds, plural: caschiel --> caschiels; uors --> uors
 SFX Mp N 2
 SFX Mp    0 s [^s] po:NOUN uf:Gender=Masc|Number=Plur
 SFX Mp    s s .    po:NOUN uf:Gender=Masc|Number=Plur
+
+# Interjections: assa
+SFX Ij N 1
+SFX Ij 0 0 . po:INTJ
