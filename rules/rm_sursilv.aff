@@ -10,18 +10,18 @@ AF XXFsFp    # staila/1: staila, stailas [po:NOUN uf:Gender=Fem]
 AF XXMsMp    # caschiel/2: caschiel, caschiels [po:NOUN uf:Gender=Masc]
 AF XXAd      # abstract/3: abstract, abstracts, abstracta, abstractas [po:ADJ]
 AF XXAv      # biaronz/4: biaronz [po:ADV]
-AF XXTaTb    # admirar/5: admir/admirel, admiras, admira, ... (transitive)
+AF XXTaTbTz  # admirar/5: admir/admirel, admiras, admira, ... (transitive)
 AF XXIj      # assa/6: assa [po:INTJ]
 AF XXFs      # feglia/7: feglia, *feglias [po:NOUN uf:Gender=Fem]
-AF XXTaTc    # skizzar/8: skizz/skizzel, skizzas, skizzescha, ... (transitive)
-AF XXTaTd    # spetgar/9: spetg/spetgel, spetgas, spetga, ... (transitive)
-AF XXTaTe    # cumpignar/10: cumpogn(el), cumpognas, cumpogna, cumpignais, ... (transitive)
-AF XXTaTf    # pagar/11: pag/paghel, pagas, paga, paghein, pagheis, pagan (transitive)
-AF XXTaTg    # tuccar/12: tucc/tuchel, tuccas, tucca, tuchein, tucheis, tuccan (transitive)
-AF XXTaTh    # valer/13: val/valel, valas, vala, valein, valeis, valan (transitive)
-AF XXTaTi    # vender/14: vend/vendel, vendas, venda, vendein/vendin, vendeis/vendis, vendan (transitive)
-AF XXTaTj    # partir/15: part/partel, partas, parta, partin, partis, partan (transitive)
-AF XXTaTk    # capir/16: capesch/capeschel, capescha, capescha, capin, capis, capeschan (transitive)
+AF XXTaTcTz  # skizzar/8: skizz/skizzel, skizzas, skizzescha, ... (transitive)
+AF XXTaTdTz  # spetgar/9: spetg/spetgel, spetgas, spetga, ... (transitive)
+AF XXTaTeTz  # cumpignar/10: cumpogn(el), cumpognas, cumpogna, cumpignais, ... (transitive)
+AF XXTaTfTz  # pagar/11: pag/paghel, pagas, paga, paghein, pagheis, pagan (transitive)
+AF XXTaTgTz  # tuccar/12: tucc/tuchel, tuccas, tucca, tuchein, tucheis, tuccan (transitive)
+AF XXTaThTz  # valer/13: val/valel, valas, vala, valein, valeis, valan (transitive)
+AF XXTaTiTz  # vender/14: vend/vendel, vendas, venda, vendein/vendin, vendeis/vendis, vendan (transitive)
+AF XXTaTjTz  # partir/15: part/partel, partas, parta, partin, partis, partan (transitive)
+AF XXTaTkTz  # capir/16: capesch/capeschel, capescha, capescha, capin, capis, capeschan (transitive)
 AF XXFP      # repressalias/17: [po:NOUN uf:Gender=Fem|Number=Plur]
 AF XXMP      # capuns/18: [po:NOUN uf:Gender=Masc|Number=Plur]
 AF XXPf      # Catrina/19: [po:PROPN uf:Gender=Fem]
@@ -151,6 +151,49 @@ SFX Tk ir escha . po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Pre
 SFX Tk ir in . po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
 SFX Tk ir is . po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
 SFX Tk ir eschan . po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+
+# Past tense of regular transitive verbs
+# - Ind Past: admirar --> admiravel, admiravas, admirava, admiravan, admiravas, admiravan
+# - Sub Past: admirar --> admiravi, admiravies, admiravi, admiravien, admiravies, admiravien
+# - Ind Past: vender --> vendevel, vendevas, vendeva, vendevan, vendevas, vendevan
+# - Ind Past: capir --> capevel, capevas, capeva, capevan, capevas, capevan
+SFX Tz N 36
+SFX Tz ar avel .  po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ar avas .  po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ar ava .   po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ar avan .  po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ar avas .  po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ar avan .  po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ar avi .   po:VERB uf:Mood=Sub|Number=Sing|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ar avies . po:VERB uf:Mood=Sub|Number=Sing|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ar avi .   po:VERB uf:Mood=Sub|Number=Sing|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ar avien . po:VERB uf:Mood=Sub|Number=Plur|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ar avies . po:VERB uf:Mood=Sub|Number=Plur|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ar avien . po:VERB uf:Mood=Sub|Number=Plur|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz er evel . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz er evas . po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz er eva . po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz er evan . po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz er evas . po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz er evan . po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz er evi .   po:VERB uf:Mood=Sub|Number=Sing|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz er evies . po:VERB uf:Mood=Sub|Number=Sing|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz er evi .   po:VERB uf:Mood=Sub|Number=Sing|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz er evien . po:VERB uf:Mood=Sub|Number=Plur|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz er evies . po:VERB uf:Mood=Sub|Number=Plur|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz er evien . po:VERB uf:Mood=Sub|Number=Plur|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ir evel . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ir evas . po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ir eva . po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ir evan . po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ir evas . po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ir evan . po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ir evi .   po:VERB uf:Mood=Sub|Number=Sing|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ir evies . po:VERB uf:Mood=Sub|Number=Sing|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ir evi .   po:VERB uf:Mood=Sub|Number=Sing|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ir evien . po:VERB uf:Mood=Sub|Number=Plur|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ir evies . po:VERB uf:Mood=Sub|Number=Plur|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ir evien . po:VERB uf:Mood=Sub|Number=Plur|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
 
 # Adjectives: abstract
 # abstract, abstracta, abstracts, abstractas
