@@ -5,7 +5,7 @@ TRY airentsucldmogphbvfzxqjèéàkòwyüùöêîAIRENTSUCLDMOGPHBVFZXQJÈÉÀKÒ
 FLAG long
 NEEDAFFIX XX
 
-AF 29
+AF 30
 AF XXFsFp    # staila/1: staila, stailas [po:NOUN uf:Gender=Fem]
 AF XXMsMp    # caschiel/2: caschiel, caschiels [po:NOUN uf:Gender=Masc]
 AF XXAd      # abstract/3: abstract, abstracts, abstracta, abstractas [po:ADJ]
@@ -35,6 +35,7 @@ AF XXPd      # quest/26: quest, questa, quests, questas [po:PRON PronType=Dem]
 AF XXPi      # tgi/27: [po:PRON PronType=Int]
 AF XXAi      # extra/28: extra, extra, extra, extra (invariable adjective)
 AF XXPj      # enqualche/29: [po:PRON PronType=Ind]
+AF XXTz      # *buer/30 [st:beiber]: buevel, buevas, ...; past tense of irregular verbs
 
 # Transitive verbs: Forms shared by all verb classes
 SFX Ta N 1

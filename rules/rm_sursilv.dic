@@ -1,4 +1,4 @@
-32744
+32759
 il	st:il po:DET uf:Gender=Masc|Number=Sing
 ils	st:il po:DET uf:Gender=Masc|Number=Plur
 la	st:la po:DET uf:Gender=Fem|Number=Sing
@@ -29,30 +29,6 @@ veien	st:haver po:AUX uf:Mood=Sub|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin
 haveies	st:haver po:AUX uf:Mood=Sub|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
 veies	st:haver po:AUX uf:Mood=Sub|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
 hagien	st:haver po:AUX uf:Mood=Sub|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin
-vevel	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Past|VerbForm=Fin
-vevas	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=2|Tense=Past|VerbForm=Fin
-veva	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin
-vevan	st:haver po:AUX uf:Mood=Ind|Number=Plur|Person=1|Tense=Past|VerbForm=Fin
-vevas	st:haver po:AUX uf:Mood=Ind|Number=Plur|Person=2|Tense=Past|VerbForm=Fin
-vevan	st:haver po:AUX uf:Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin
-havevel	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Past|VerbForm=Fin
-havevas	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=2|Tense=Past|VerbForm=Fin
-haveva	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin
-havevan	st:haver po:AUX uf:Mood=Ind|Number=Plur|Person=1|Tense=Past|VerbForm=Fin
-havevas	st:haver po:AUX uf:Mood=Ind|Number=Plur|Person=2|Tense=Past|VerbForm=Fin
-havevan	st:haver po:AUX uf:Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin
-havevi	st:haver po:AUX uf:Mood=Sub|Number=Sing|Person=1|Tense=Past|VerbForm=Fin
-havevies	st:haver po:AUX uf:Mood=Sub|Number=Sing|Person=2|Tense=Past|VerbForm=Fin
-havevi	st:haver po:AUX uf:Mood=Sub|Number=Sing|Person=3|Tense=Past|VerbForm=Fin
-havevien	st:haver po:AUX uf:Mood=Sub|Number=Plur|Person=1|Tense=Past|VerbForm=Fin
-havevies	st:haver po:AUX uf:Mood=Sub|Number=Plur|Person=2|Tense=Past|VerbForm=Fin
-havevien	st:haver po:AUX uf:Mood=Sub|Number=Plur|Person=3|Tense=Past|VerbForm=Fin
-vevi	st:haver po:AUX uf:Mood=Sub|Number=Sing|Person=1|Tense=Past|VerbForm=Fin
-vevies	st:haver po:AUX uf:Mood=Sub|Number=Sing|Person=2|Tense=Past|VerbForm=Fin
-vevi	st:haver po:AUX uf:Mood=Sub|Number=Sing|Person=3|Tense=Past|VerbForm=Fin
-vevien	st:haver po:AUX uf:Mood=Sub|Number=Plur|Person=1|Tense=Past|VerbForm=Fin
-vevies	st:haver po:AUX uf:Mood=Sub|Number=Plur|Person=2|Tense=Past|VerbForm=Fin
-vevien	st:haver po:AUX uf:Mood=Sub|Number=Plur|Person=3|Tense=Past|VerbForm=Fin
 havess	st:haver po:AUX uf:Mood=Cnd|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
 havesses	st:haver po:AUX uf:Mood=Cnd|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
 havess	st:haver po:AUX uf:Mood=Cnd|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin
@@ -180,6 +156,45 @@ neu	st:vegnir po:AUX uf:Mood=Imp|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin
 vegni	st:vegnir po:AUX uf:Mood=Imp|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
 vegnent	st:vegnir po:AUX uf:Tense=Pres|VerbForm=Part
 vegnend	st:vegnir po:AUX uf:VerbForm=Ger
+buer/30 st:beiber
+carter/30 st:crer
+cuger/30: st:cuer
+currer/30: st:cuorer
+cuscher/30 st:quescher
+cuvrer/30 st:cuvierer
+dar/30 st:dar
+der/30 st:dar
+der/30 st:duer
+duer/30 st:duer
+empruar/30 st:empruar
+encurir/30 st:encurir
+fager/30 st:far
+frer/30 st:fierer
+fugir/30 st:fugir
+haver/30 st:haver
+laschar/30 st:schar
+ler/30 st:vuler
+luvrar/30 st:luvrar
+mar/30 st:ir
+metter/30 st:metter
+perdegar/30 st:perdegar
+perder/30 st:piarder
+pervegiar/30 st:pervegiar
+plascher/30 st:plascher
+pruiir/30 st:pruir
+puder/30 st:puder
+riir/30 st:rir
+ruiir/30 st:ruir
+saver/30 st:saver
+schar/30 st:schar
+schir/30 st:dir
+schischer/30 st:scher
+star/30 st:star
+ster/30 st:star
+stuer/30 st:stuer
+targer/30 st:trer
+tener/30 st:tener
+ver/30 st:haver
 Adam/20
 America/1
 Anceinza/1
