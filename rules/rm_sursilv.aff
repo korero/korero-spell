@@ -6,36 +6,36 @@ FLAG long
 NEEDAFFIX XX
 
 AF 30
-AF XXFsFp    # staila/1: staila, stailas [po:NOUN uf:Gender=Fem]
-AF XXMsMp    # caschiel/2: caschiel, caschiels [po:NOUN uf:Gender=Masc]
-AF XXAd      # abstract/3: abstract, abstracts, abstracta, abstractas [po:ADJ]
-AF XXAv      # biaronz/4: biaronz [po:ADV]
-AF XXTaTbTz  # admirar/5: admir/admirel, admiras, admira, ... (transitive)
-AF XXIj      # assa/6: assa [po:INTJ]
-AF XXFs      # feglia/7: feglia, *feglias [po:NOUN uf:Gender=Fem]
-AF XXTaTcTz  # skizzar/8: skizz/skizzel, skizzas, skizzescha, ... (transitive)
-AF XXTaTdTz  # spetgar/9: spetg/spetgel, spetgas, spetga, ... (transitive)
-AF XXTaTeTz  # cumpignar/10: cumpogn(el), cumpognas, cumpogna, cumpignais, ... (transitive)
-AF XXTaTfTz  # pagar/11: pag/paghel, pagas, paga, paghein, pagheis, pagan (transitive)
-AF XXTaTgTz  # tuccar/12: tucc/tuchel, tuccas, tucca, tuchein, tucheis, tuccan (transitive)
-AF XXTaThTz  # valer/13: val/valel, valas, vala, valein, valeis, valan (transitive)
-AF XXTaTiTz  # vender/14: vend/vendel, vendas, venda, vendein/vendin, vendeis/vendis, vendan (transitive)
-AF XXTaTjTz  # partir/15: part/partel, partas, parta, partin, partis, partan (transitive)
-AF XXTaTkTz  # capir/16: capesch/capeschel, capescha, capescha, capin, capis, capeschan (transitive)
-AF XXFP      # repressalias/17: [po:NOUN uf:Gender=Fem|Number=Plur]
-AF XXMP      # capuns/18: [po:NOUN uf:Gender=Masc|Number=Plur]
-AF XXPf      # Catrina/19: [po:PROPN uf:Gender=Fem]
-AF XXPm      # Carli/20: [po:PROPN uf:Gender=Masc]
-AF XXAp      # sin/21: [po:ADP]
-AF XXCj      # u/22: [po:CONJ]
-AF XXMs      # biestgam/23: biestgam, *biestgams [po:NOUN uf:Gender=Masc]
-AF XXCn      # otg/24: [po:NUM uf:NumType=Card]
-AF XXAo      # tschienavel/25: [po:Adj uf:NumType=Ord]
-AF XXPd      # quest/26: quest, questa, quests, questas [po:PRON PronType=Dem]
-AF XXPi      # tgi/27: [po:PRON PronType=Int]
-AF XXAi      # extra/28: extra, extra, extra, extra (invariable adjective)
-AF XXPj      # enqualche/29: [po:PRON PronType=Ind]
-AF XXTz      # *buer/30 [st:beiber]: buevel, buevas, ...; past tense of irregular verbs
+AF XXFsFp      # staila/1: staila, stailas [po:NOUN uf:Gender=Fem]
+AF XXMsMp      # caschiel/2: caschiel, caschiels [po:NOUN uf:Gender=Masc]
+AF XXAd        # abstract/3: abstract, abstracts, abstracta, abstractas [po:ADJ]
+AF XXAv        # biaronz/4: biaronz [po:ADV]
+AF XXTaTbTyTz  # admirar/5: admir/admirel, admiras, admira, ... (transitive)
+AF XXIj        # assa/6: assa [po:INTJ]
+AF XXFs        # feglia/7: feglia, *feglias [po:NOUN uf:Gender=Fem]
+AF XXTaTcTyTz  # skizzar/8: skizz/skizzel, skizzas, skizzescha, ... (transitive)
+AF XXTaTdTyTz  # spetgar/9: spetg/spetgel, spetgas, spetga, ... (transitive)
+AF XXTaTeTyTz  # cumpignar/10: cumpogn(el), cumpognas, cumpogna, cumpignais, ... (transitive)
+AF XXTaTfTyTz  # pagar/11: pag/paghel, pagas, paga, paghein, pagheis, pagan (transitive)
+AF XXTaTgTyTz  # tuccar/12: tucc/tuchel, tuccas, tucca, tuchein, tucheis, tuccan (transitive)
+AF XXTaThTyTz  # valer/13: val/valel, valas, vala, valein, valeis, valan (transitive)
+AF XXTaTiTyTz  # vender/14: vend/vendel, vendas, venda, vendein/vendin, vendeis/vendis, vendan (transitive)
+AF XXTaTjTyTz  # partir/15: part/partel, partas, parta, partin, partis, partan (transitive)
+AF XXTaTkTyTz  # capir/16: capesch/capeschel, capescha, capescha, capin, capis, capeschan (transitive)
+AF XXFP        # repressalias/17: [po:NOUN uf:Gender=Fem|Number=Plur]
+AF XXMP        # capuns/18: [po:NOUN uf:Gender=Masc|Number=Plur]
+AF XXPf        # Catrina/19: [po:PROPN uf:Gender=Fem]
+AF XXPm        # Carli/20: [po:PROPN uf:Gender=Masc]
+AF XXAp        # sin/21: [po:ADP]
+AF XXCj        # u/22: [po:CONJ]
+AF XXMs        # biestgam/23: biestgam, *biestgams [po:NOUN uf:Gender=Masc]
+AF XXCn        # otg/24: [po:NUM uf:NumType=Card]
+AF XXAo        # tschienavel/25: [po:Adj uf:NumType=Ord]
+AF XXPd        # quest/26: quest, questa, quests, questas [po:PRON PronType=Dem]
+AF XXPi        # tgi/27: [po:PRON PronType=Int]
+AF XXAi        # extra/28: extra, extra, extra, extra (invariable adjective)
+AF XXPj        # enqualche/29: [po:PRON PronType=Ind]
+AF XXTz        # *buer/30 [st:beiber]: buevel, buevas, ...; past tense of irregular verbs
 
 # Transitive verbs: Forms shared by all verb classes
 SFX Ta N 1
@@ -152,6 +152,27 @@ SFX Tk ir escha . po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Pre
 SFX Tk ir in . po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
 SFX Tk ir is . po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
 SFX Tk ir eschan . po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+
+# Past participle of transitive verbs
+# - debostgar --> debostgau, debostgada, debostgai, debostgadas
+# - valer --> valiu/valius, valida, vali, validas
+# - vender --> vendiu/vendius, vendida, vendi, vendidas
+# - capir --> capiu/capius, capida, capi, capidas
+SFX Ty N 14
+SFX Ty ar au .   po:VERB uf:Gender=Masc|Number=Sing|Subcat=Tran|Tense=Past|VerbForm=Part
+SFX Ty ar ada .  po:VERB uf:Gender=Fem|Number=Sing|Subcat=Tran|Tense=Past|VerbForm=Part
+SFX Ty ar ai .   po:VERB uf:Gender=Masc|Number=Plur|Subcat=Tran|Tense=Past|VerbForm=Part
+SFX Ty ar adas . po:VERB uf:Gender=Fem|Number=Plur|Subcat=Tran|Tense=Past|VerbForm=Part
+SFX Ty er iu .   po:VERB uf:Gender=Masc|Number=Sing|Subcat=Tran|Tense=Past|VerbForm=Part
+SFX Ty er ius .  po:VERB uf:Gender=Masc|Number=Sing|Subcat=Tran|Tense=Past|VerbForm=Part
+SFX Ty er ida .  po:VERB uf:Gender=Fem|Number=Sing|Subcat=Tran|Tense=Past|VerbForm=Part
+SFX Ty er i .    po:VERB uf:Gender=Masc|Number=Plur|Subcat=Tran|Tense=Past|VerbForm=Part
+SFX Ty er idas . po:VERB uf:Gender=Fem|Number=Plur|Subcat=Tran|Tense=Past|VerbForm=Part
+SFX Ty ir iu .   po:VERB uf:Gender=Masc|Number=Sing|Subcat=Tran|Tense=Past|VerbForm=Part
+SFX Ty ir ius .  po:VERB uf:Gender=Masc|Number=Sing|Subcat=Tran|Tense=Past|VerbForm=Part
+SFX Ty ir ida .  po:VERB uf:Gender=Fem|Number=Sing|Subcat=Tran|Tense=Past|VerbForm=Part
+SFX Ty ir i .    po:VERB uf:Gender=Masc|Number=Plur|Subcat=Tran|Tense=Past|VerbForm=Part
+SFX Ty ir idas . po:VERB uf:Gender=Fem|Number=Plur|Subcat=Tran|Tense=Past|VerbForm=Part
 
 # Verb forms of transitive verbs that are shared among all conjugation classes
 # - Ind Past: admirar --> admiravel, admiravas, admirava,
