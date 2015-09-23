@@ -13,7 +13,7 @@ AF XXAv        # biaronz/4: biaronz [po:ADV]
 AF XXTaTbTyTz  # admirar/5: admir/admirel, admiras, admira, ... (transitive)
 AF XXIj        # assa/6: assa [po:INTJ]
 AF XXFs        # feglia/7: feglia, *feglias [po:NOUN uf:Gender=Fem]
-AF XXTaTcTyTz  # skizzar/8: skizz/skizzel, skizzas, skizzescha, ... (transitive)
+AF XXTaTcTyTz  # skizzar/8: skizzeschel, skizzeschas, ... (transitive)
 AF XXTaTdTyTz  # spetgar/9: spetg/spetgel, spetgas, spetga, ... (transitive)
 AF XXTaTeTyTz  # cumpignar/10: cumpogn(el), cumpognas, cumpogna, cumpignais, ... (transitive)
 AF XXTaTfTyTz  # pagar/11: pag/paghel, pagas, paga, paghein, pagheis, pagan (transitive)
@@ -66,10 +66,9 @@ SFX Tb ar an . po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|V
 
 # Transitive verbs: skizzar
 # - Ind Pres: skizz/skizzel, skizzas, skizzescha, skizzein, skizzeis, skizzeschan
-SFX Tc N 7
-SFX Tc ar 0 . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Tc ar el . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
-SFX Tc ar as . po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tc N 6
+SFX Tc ar eschel . po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tc ar eschas . po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
 SFX Tc ar escha . po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
 SFX Tc ar ein . po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
 SFX Tc ar eis . po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
