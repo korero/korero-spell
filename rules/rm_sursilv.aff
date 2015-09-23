@@ -153,12 +153,20 @@ SFX Tk ir in . po:VERB uf:Mood=Ind|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|V
 SFX Tk ir is . po:VERB uf:Mood=Ind|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
 SFX Tk ir eschan . po:VERB uf:Mood=Ind|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
 
-# Past tense of regular transitive verbs
-# - Ind Past: admirar --> admiravel, admiravas, admirava, admiravan, admiravas, admiravan
-# - Sub Past: admirar --> admiravi, admiravies, admiravi, admiravien, admiravies, admiravien
-# - Ind Past: vender --> vendevel, vendevas, vendeva, vendevan, vendevas, vendevan
-# - Ind Past: capir --> capevel, capevas, capeva, capevan, capevas, capevan
-SFX Tz N 36
+# Verb forms of transitive verbs that are shared among all conjugation classes
+# - Ind Past: admirar --> admiravel, admiravas, admirava,
+#                         admiravan, admiravas, admiravan
+# - Sub Past: admirar --> admiravi, admiravies, admiravi,
+#                         admiravien, admiravies, admiravien
+# - Ind Past: vender --> vendevel, vendevas, vendeva,
+#                        vendevan, vendevas, vendevan
+# - Ind Past: capir --> capevel, capevas, capeva,
+#                       capevan, capevas, capevan
+# - Cnd Pres: debostgar --> debostgass/debostgassel, debostgasses, debostgass,
+#                           debostgassen, debostgasses, debostgassen
+# - Cnd Past: debostgar --> debostgassi, debostgassies, debostgassi,
+#                           debostgassien, debostgassies, debostgassien
+SFX Tz N 49
 SFX Tz ar avel .  po:VERB uf:Mood=Ind|Number=Sing|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
 SFX Tz ar avas .  po:VERB uf:Mood=Ind|Number=Sing|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
 SFX Tz ar ava .   po:VERB uf:Mood=Ind|Number=Sing|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
@@ -195,6 +203,19 @@ SFX Tz ir evi .   po:VERB uf:Mood=Sub|Number=Sing|Person=3|Subcat=Tran|Tense=Pas
 SFX Tz ir evien . po:VERB uf:Mood=Sub|Number=Plur|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
 SFX Tz ir evies . po:VERB uf:Mood=Sub|Number=Plur|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
 SFX Tz ir evien . po:VERB uf:Mood=Sub|Number=Plur|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ar ass .    po:VERB uf:Mood=Cnd|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tz ar assel .  po:VERB uf:Mood=Cnd|Number=Sing|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tz ar asses .  po:VERB uf:Mood=Cnd|Number=Sing|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tz ar ass .    po:VERB uf:Mood=Cnd|Number=Sing|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tz ar assen .  po:VERB uf:Mood=Cnd|Number=Plur|Person=1|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tz ar asses .  po:VERB uf:Mood=Cnd|Number=Plur|Person=2|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tz ar assen .  po:VERB uf:Mood=Cnd|Number=Plur|Person=3|Subcat=Tran|Tense=Pres|VerbForm=Fin
+SFX Tz ar assi .   po:VERB uf:Mood=Cnd|Number=Sing|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ar assies . po:VERB uf:Mood=Cnd|Number=Sing|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ar assi .   po:VERB uf:Mood=Cnd|Number=Sing|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ar assien . po:VERB uf:Mood=Cnd|Number=Plur|Person=1|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ar assies . po:VERB uf:Mood=Cnd|Number=Plur|Person=2|Subcat=Tran|Tense=Past|VerbForm=Fin
+SFX Tz ar assien . po:VERB uf:Mood=Cnd|Number=Plur|Person=3|Subcat=Tran|Tense=Past|VerbForm=Fin
 
 # Adjectives: abstract
 # abstract, abstracta, abstracts, abstractas
