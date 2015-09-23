@@ -38,6 +38,17 @@ AF XXPj        # enqualche/29: [po:PRON PronType=Ind]
 AF XXTz        # *buer/30 [st:beiber]: buevel, buevas, ...; past tense of irregular verbs
 AF XXTx        # *buer/31 [st:beiber]: buius, buida, buis, buidas; part participle of irregular verbs
 
+# Improve suggestions for common spelling mistakes.
+# *partescha --> parta
+# *parteschel --> partel
+# *capa --> capescha
+# *capel --> capeschel
+REP 4
+REP escha a
+REP esche e
+REP a escha
+REP e esche
+
 # Transitive verbs: Forms shared by all verb classes
 SFX Ta N 1
 SFX Ta 0 0 . po:VERB uf:Subcat=Tran|VerbForm=Inf
