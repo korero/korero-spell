@@ -1,16 +1,16 @@
-32759
+32797
 il	st:il po:DET uf:Gender=Masc|Number=Sing
 ils	st:il po:DET uf:Gender=Masc|Number=Plur
 la	st:la po:DET uf:Gender=Fem|Number=Sing
 las	st:la po:DET uf:Gender=Fem|Number=Plur
-jeu	po:PRON uf:Number=Sing|Person=1|PronType=Pers
-ti	po:PRON uf:Number=Sing|Person=2|PronType=Pers
-el	po:PRON uf:Gender=Masc|Number=Sing|Person=3|PronType=Pers
-ella	po:PRON uf:Gender=Fem|Number=Sing|Person=3|PronType=Pers
-nus	po:PRON uf:Number=Plur|Person=1|PronType=Pers
-vus	po:PRON uf:Number=Plur|Person=2|PronType=Pers
-els	po:PRON uf:Gender=Masc|Number=Plur|Person=3|PronType=Pers
-ellas	po:PRON uf:Gender=Fem|Number=Plur|Person=3|PronType=Pers
+jeu	po:PRON uf:Number=Sing|Person=1|PronType=Prs
+ti	po:PRON uf:Number=Sing|Person=2|PronType=Prs
+el	po:PRON uf:Gender=Masc|Number=Sing|Person=3|PronType=Prs
+ella	po:PRON uf:Gender=Fem|Number=Sing|Person=3|PronType=Prs
+nus	po:PRON uf:Number=Plur|Person=1|PronType=Prs
+vus	po:PRON uf:Number=Plur|Person=2|PronType=Prs
+els	po:PRON uf:Gender=Masc|Number=Plur|Person=3|PronType=Prs
+ellas	po:PRON uf:Gender=Fem|Number=Plur|Person=3|PronType=Prs
 haver	po:AUX uf:VerbForm=Inf
 hai	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
 vai	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
@@ -157,44 +157,83 @@ vegni	st:vegnir po:AUX uf:Mood=Imp|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin
 vegnent	st:vegnir po:AUX uf:Tense=Pres|VerbForm=Part
 vegnend	st:vegnir po:AUX uf:VerbForm=Ger
 buer/30 st:beiber
+buiu/31 st:beiber
 carter/30 st:crer
-cuger/30: st:cuer
-currer/30: st:cuorer
+cartiu/31 st:crer
+cuger/30 st:cuer
+cotg/31 st:cuer
+currer/30 st:cuorer
+curriu/31 st:cuorer
 cuscher/30 st:quescher
+cuschiu/31 st:quescher
 cuvrer/30 st:cuvierer
+cuvretg/31 st:cuvierer
 dar/30 st:dar
+dau/31 st:dar
 der/30 st:dar
 der/30 st:duer
 duer/30 st:duer
+duiu/31 st:duer
 empruar/30 st:empruar
+empruau/31 st:empruar
 encurir/30 st:encurir
+encuriu/31 st:encurir
 fager/30 st:far
+fatg/31 st:far
 frer/30 st:fierer
+fretg/31 st:fierer
+fiers/31 st:fierer
 fugir/30 st:fugir
+fugiu/31 st:fugir
 haver/30 st:haver
+giu/31 st:haver
 laschar/30 st:schar
+schau/31 st:schar
 ler/30 st:vuler
 luvrar/30 st:luvrar
+luvrau/31 st:luvrar
 mar/30 st:ir
+iu/31 st:ir
 metter/30 st:metter
+mess/31 st:metter
 perdegar/30 st:perdegar
-perder/30 st:piarder
+perdegau/31 st:perdegar
+perder/30 st:perder
+piarder/30 st:piarder
+piars/31 st:piarder
+pers/31 st:perder
 pervegiar/30 st:pervegiar
+pervegiau/31 st:pervegiar
 plascher/30 st:plascher
+plaschiu/31 st:plascher
 pruiir/30 st:pruir
+pruiu/31 st:pruir
 puder/30 st:puder
+pudiu/31 st:puder
 riir/30 st:rir
+ris/31 st:rir
 ruiir/30 st:ruir
+ruis/31 st:ruir
 saver/30 st:saver
+saviu/31 st:saver
 schar/30 st:schar
+schau/31 st:schar
 schir/30 st:dir
+detg/31 st:dir
 schischer/30 st:scher
+schischiu/31 st:scher
 star/30 st:star
+stau/31 st:star
 ster/30 st:star
 stuer/30 st:stuer
+stuiu/31 st:stuer
 targer/30 st:trer
+tratg/31 st:trer
 tener/30 st:tener
-ver/30 st:haver
+teniu/31 st:tener
+veser/30 st:veser
+vesiu/31 st:veser
+viu/31 st:veser
 Adam/20
 America/1
 Anceinza/1
@@ -14489,7 +14528,6 @@ jessas/6
 jester/2
 jester/3
 jet/2
-jeu po:PRON uf:PronType=Prs
 jeus/6
 jeussas/6
 job/2
