@@ -58,11 +58,12 @@ which is part of [Mojolicious](http://mojolicio.us/).
 hypnotoad server.pl
 ```
 
-Verify that it is working by visiting `http://localhost:8080`.  Port
-8080 is the default port for Hypnotoad.
+Verify that it is working by visiting `http://localhost:8081`.  Port
+8080 is the default port for Hypnotoad but `server.pl` changes the
+port to 8081.
 
 If you're using Apache, configure your virtual server to act as a
-proxy and pass requests through to port 8080. Make sure you have
+proxy and pass requests through to port 8081. Make sure you have
 `mod_proxy` and `mod_proxy_http`enabled.  Our setup also uses an extra
 header. Thus, you also need `mod_headers`.
 
@@ -87,8 +88,8 @@ ours:
     </Proxy>
     ProxyRequests Off
     ProxyPreserveHost On
-    ProxyPass / http://korero.org:8080/ keepalive=On
-    ProxyPassReverse / http://korero.org:8080/
+    ProxyPass / http://korero.org:8081/ keepalive=On
+    ProxyPassReverse / http://korero.org:8081/
     RequestHeader set X-Forwarded-Proto "http"
 </VirtualHost>
 ```
@@ -109,7 +110,7 @@ including statements to start and stop the server.
 check process korero-spell with pidfile /home/alex/korero.org/hypnotoad.pid
     start program = "/usr/bin/hypnotoad /home/alex/korero.org/server.pl"
     stop program = "/usr/bin/hypnotoad --stop /home/alex/korero.org/server.pl"
-    if failed host localhost port 8080 type tcp protocol http
+    if failed host localhost port 8081 type tcp protocol http
       and request "/" for 5 cycles then restart
     if totalmem > 500 MB for 5 cycles then restart
     if 3 restarts within 15 cycles then timeout
