@@ -5,6 +5,8 @@ use Text::Hunspell;
 use Encode;
 use utf8;
 
+app->config(hypnotoad => {listen => ['http://*:8081']});
+
 # Directories to look for dictionaries.
 # Earlier directories have precedence.
 my $home = Mojo::Home->new;
