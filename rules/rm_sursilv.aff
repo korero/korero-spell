@@ -288,12 +288,14 @@ SFX Ai 0 0 . po:ADJ uf:Gender=Masc|Number=Plur
 SFX Ai 0 0 . po:ADJ uf:Gender=Fem|Number=Plur
 
 # Ordinal adjectives: tschienavel
-# tschienavel, tschienavela, tschienavels, tschienavelas
-SFX Ao N 4
+# tschienavel, tschienavla, tschienavels, tschienavlas
+SFX Ao N 6
 SFX Ao 0 0 . po:ADJ uf:Gender=Masc|NumType=Ord|Number=Sing
-SFX Ao 0 a . po:ADJ uf:Gender=Fem|NumType=Ord|Number=Sing
+SFX Ao 0 a [^l] po:ADJ uf:Gender=Fem|NumType=Ord|Number=Sing
+SFX Ao el la . po:ADJ uf:Gender=Fem|NumType=Ord|Number=Sing
 SFX Ao 0 s . po:ADJ uf:Gender=Masc|NumType=Ord|Number=Plur
-SFX Ao 0 as . po:ADJ uf:Gender=Fem|NumType=Ord|Number=Plur
+SFX Ao 0 as . [^l] po:ADJ uf:Gender=Fem|NumType=Ord|Number=Plur
+SFX Ao el las . po:ADJ uf:Gender=Fem|NumType=Ord|Number=Plur
 
 # Adverbs: biaronz
 SFX Av N 1

@@ -1,4 +1,4 @@
-32843
+32856
 il	st:il po:DET uf:Gender=Masc|Number=Sing
 ils	st:il po:DET uf:Gender=Masc|Number=Plur
 la	st:la po:DET uf:Gender=Fem|Number=Sing
@@ -20,6 +20,22 @@ dalla	st:da po:ADP uf:Gender=Fem|Number=Sing
 dallas	st:da po:ADP uf:Gender=Fem|Number=Plur
 cul	st:cun po:ADP uf:Gender=Masc|Number=Sing
 cugl	st:cun po:ADP uf:Gender=Masc|Number=Sing
+lez	po:PRON uf:Gender=Masc|Number=Sing|PronType=Dem
+lezza	po:PRON uf:Gender=Fem|Number=Sing|PronType=Dem
+lezs	po:PRON uf:Gender=Masc|Number=Plur|PronType=Dem
+lezzas	po:PRON uf:Gender=Fem|Number=Plur|PronType=Dem
+quel	po:PRON uf:Gender=Masc|Number=Sing|PronType=Dem
+quella	po:PRON uf:Gender=Fem|Number=Sing|PronType=Dem
+quels	po:PRON uf:Gender=Masc|Number=Plur|PronType=Dem
+quellas	po:PRON uf:Gender=Fem|Number=Plur|PronType=Dem
+tschel	po:PRON uf:Gender=Masc|Number=Sing|PronType=Dem
+tschella	po:PRON uf:Gender=Fem|Number=Sing|PronType=Dem
+tschels	po:PRON uf:Gender=Masc|Number=Plur|PronType=Dem
+tschellas	po:PRON uf:Gender=Fem|Number=Plur|PronType=Dem
+negin	po:DET uf:Gender=Masc|Number=Sing|PronType=Neg
+negina	po:DET uf:Gender=Fem|Number=Sing|PronType=Neg
+negins	po:DET uf:Gender=Masc|Number=Plur|PronType=Neg
+neginas	po:DET uf:Gender=Fem|Number=Plur|PronType=Neg
 haver	po:AUX uf:VerbForm=Inf
 hai	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
 vai	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
@@ -2723,6 +2739,8 @@ bialaura/1
 bialaveta/1
 biancaria/1
 biar/29
+biaras/29
+biars/29
 biarezia/1
 biaron/4
 biaronz/4
@@ -3305,6 +3323,7 @@ bubrola/1
 bubronda/1
 buc/2
 buc/4
+buca/4
 bucca/1
 buccada/1
 buccadaglia/1
@@ -9037,7 +9056,7 @@ emplunada/1
 emplunar/5
 empora/1
 empori/2
-emprem
+emprem/25
 empremnaschiu/2
 empremnaschiu/3
 emprender/14
@@ -15152,10 +15171,8 @@ lexicografia/1
 lexicologia/1
 lexicologic/3
 lexicon/2
-lez
 lezi/2
 leztga/1
-lezza/26
 libaziun/1
 libel/2
 libella/1
@@ -18035,7 +18052,6 @@ neghelet/2
 neghentada/1
 neghentar/5
 negher/3
-negin
 negla/1
 negligent/3
 negligentar/8
@@ -18878,7 +18894,7 @@ ondular/8
 ondulau/3
 ondulaziun/1
 onerus/3
-onn
+onn/2
 onn/4
 onomast/2
 onomastic/3
@@ -22132,7 +22148,6 @@ quecher/2
 quei
 queida/1
 queissa/1
-quel/26
 quellacanun/4
 quelluisa/4
 quen/2
@@ -30875,7 +30890,6 @@ tscheina/1
 tscheins/2
 tscheiver/2
 tscheivril/3
-tschel/26
 tschelada/1
 tscheladamein/4
 tschelader/2
@@ -30884,7 +30898,6 @@ tschelau/3
 tschelauer/3
 tschelem/2
 tschelentar/5
-tschella/26
 tschelluisa/4
 tschem/2
 tschema/1
