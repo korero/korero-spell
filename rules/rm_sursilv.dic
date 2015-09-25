@@ -1,4 +1,4 @@
-32856
+32865
 il	st:il po:DET uf:Gender=Masc|Number=Sing
 ils	st:il po:DET uf:Gender=Masc|Number=Plur
 la	st:la po:DET uf:Gender=Fem|Number=Sing
@@ -260,9 +260,13 @@ veser/30 st:veser
 vesiu/31 st:veser
 viu/31 st:veser
 Adam/20
+Alex/20
+Alice/19
 America/1
 Anceinza/1
+Andri/20
 Andriu/20
+Anna/19
 Antoni/20
 Anzeinsa
 Anzeisnas
@@ -271,12 +275,14 @@ Babel/6
 Babilon/6
 Barabbas/20
 Barclamiu/20
+Beni/20
 Breil/6
 Brescha/6
 Buania
 Cadadiu/1
 Cadi/1
 California/1
+Cantieni/32
 Carli/20
 Carmel/6
 Castrisch/6
@@ -286,22 +292,23 @@ Christus
 Clau/20
 Cologna/6
 Colorado/6
-Constanza/1
+Constanza/19
 Crispin/20
 Cristoffel/20
 Cristus/2
 Cruarun/20
-Cuera/1
+Cuera/19
 Cunclas/2
 Daniev/2
+Decurtins/32
 Deus/2
 Dieu/2
 Dieus/2
 Diu/2
-Engiadina/1
+Engiadina/19
 Esau/20
 Filistin/2
-Frontscha/1
+Frontscha/19
 Gagl/20
 Geremias/20
 Giachen/20
@@ -312,11 +319,11 @@ Gioder/20
 Gion/20
 Giuda/20
 Giudas/20
-Glaruna/1
-Grischun/2
+Glaruna/19
+Grischun/20
 Grischunia/1
 Habacuc/20
-Immaculata/1
+Immaculata/19
 Israel
 Israeli/2
 Italia/1
@@ -324,11 +331,11 @@ Jehova
 Jesus/2
 Jordan/2
 Kanalles
-Laax/6
+Laax/20
 Ladir/6
 Laser/2
 Laus/6
-Lumbrein/6
+Lumbrein/20
 Margriata/19
 Maria/19
 Martin/20
@@ -372,6 +379,7 @@ Russer/2
 Salomon/20
 Schlans/6
 Schuob/2
+Sedrun/32
 Sevgein/6
 Sontgaclau/2
 Sontgascruschsmatg/17
@@ -384,6 +392,7 @@ Sursaissa/1
 Surselva/1
 Tavanasa/6
 Terca/1
+Tujetsch/32
 Trun/6
 Tschuncheismas/17
 Tumasch/20

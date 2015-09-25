@@ -5,7 +5,7 @@ TRY airentsucldmogphbvfzxqjèéàkòwyüùöêîAIRENTSUCLDMOGPHBVFZXQJÈÉÀKÒ
 FLAG long
 NEEDAFFIX XX
 
-AF 31
+AF 32
 AF XXFsFp      # staila/1: staila, stailas [po:NOUN uf:Gender=Fem]
 AF XXMsMp      # caschiel/2: caschiel, caschiels [po:NOUN uf:Gender=Masc]
 AF XXAd        # abstract/3: abstract, abstracts, abstracta, abstractas [po:ADJ]
@@ -37,6 +37,7 @@ AF XXAi        # extra/28: extra, extra, extra, extra (invariable adjective)
 AF XXPj        # enqualche/29: [po:PRON PronType=Ind]
 AF XXTz        # *buer/30 [st:beiber]: buevel, buevas, ...; past tense of irregular verbs
 AF XXTx        # *buer/31 [st:beiber]: buius, buida, buis, buidas; part participle of irregular verbs
+AF XXPn        # Decurtins/32 [po:PROPN]
 
 # Improve suggestions for common spelling mistakes.
 # *partescha --> parta
@@ -366,3 +367,7 @@ SFX Pf 0 0 . po:PROPN uf:Gender=Fem
 # Proper noun, masculine: Carli
 SFX Pm N 1
 SFX Pm 0 0 . po:PROPN uf:Gender=Masc
+
+# Proper noun: Decurtins
+SFX Pn N 1
+SFX Pn 0 0 . po:PROPN
