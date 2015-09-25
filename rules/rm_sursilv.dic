@@ -1,4 +1,4 @@
-32834
+32843
 il	st:il po:DET uf:Gender=Masc|Number=Sing
 ils	st:il po:DET uf:Gender=Masc|Number=Plur
 la	st:la po:DET uf:Gender=Fem|Number=Sing
@@ -11,6 +11,15 @@ nus	po:PRON uf:Number=Plur|Person=1|PronType=Prs
 vus	po:PRON uf:Number=Plur|Person=2|PronType=Prs
 els	po:PRON uf:Gender=Masc|Number=Plur|Person=3|PronType=Prs
 ellas	po:PRON uf:Gender=Fem|Number=Plur|Person=3|PronType=Prs
+dil	st:da po:ADP uf:Gender=Masc|Number=Sing
+digl	st:da po:ADP uf:Gender=Masc|Number=Sing
+dils	st:da po:ADP uf:Gender=Masc|Number=Plur
+alla	st:a po:ADP uf:Gender=Fem|Number=Sing
+allas	st:a po:ADP uf:Gender=Fem|Number=Plur
+dalla	st:da po:ADP uf:Gender=Fem|Number=Sing
+dallas	st:da po:ADP uf:Gender=Fem|Number=Plur
+cul	st:cun po:ADP uf:Gender=Masc|Number=Sing
+cugl	st:cun po:ADP uf:Gender=Masc|Number=Sing
 haver	po:AUX uf:VerbForm=Inf
 hai	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
 vai	st:haver po:AUX uf:Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin
