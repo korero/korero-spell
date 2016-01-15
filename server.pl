@@ -55,7 +55,9 @@ sub load_languages {
     my $label = $dic;
     $label =~ s/.*\///;
     $label =~ s/_/-/g;
-    $label = I18N::LangTags::List::name($label) if $label =~ /^[a-z]+(-[a-zA-Z]+)?$/;
+    if ($label =~ /^[a-z]+(-[a-zA-Z]+)?$/) {
+      $label = I18N::LangTags::List::name($label) || $label;
+    }
     $languages{$label} = $dic;
     $app->log->info("Found dictionary $label");
   }
