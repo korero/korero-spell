@@ -31,13 +31,16 @@ my @hunspell_dir = (
     );
 
 # Global variable for all the languages and the location of their files.
-# Keys are human-readable.
+# "en-US" => "/Applications/LibreOffice.app/Contents/share/extensions/dict-en/en_US".
 # Initialized using load_languages.
 my %languages;
+# "en-US" => "US English".
+my %language_names;
 
 sub load_languages {
   my $app = shift;
-  my %languages;
+  %languages = ();
+  %language_names = ();
   my @files;
   # Reverse directory to make sure precedence is correct.
   for my $dir (map {glob "'$_'"} reverse @hunspell_dir) {
@@ -52,29 +55,30 @@ sub load_languages {
 
   for my $dic (@dic) {
     next unless $aff{$dic};
-    my $label = $dic;
-    $label =~ s/.*\///;
-    $label =~ s/_/-/g;
-    if ($label =~ /^[a-z]+(-[a-zA-Z]+)?$/) {
-      $label = I18N::LangTags::List::name($label) || $label;
+    my $code = $dic;
+    $code =~ s/.*\///;
+    $code =~ s/_/-/g;
+    $languages{$code} = $dic;
+
+    if ($code =~ /^[a-z]+(-[a-zA-Z]+)?$/) {
+      $language_names{$code} = I18N::LangTags::List::name($code) || $code;
     }
-    $languages{$label} = $dic;
-    $app->log->info("Found dictionary $label");
+
+    $app->log->info("Found dictionary $code");
   }
 
   die "Cannot find Hunspell dictionaries in any of the following directories:\n  "
       . join("\n  ", @hunspell_dir) . "\n" unless %languages;
-
-  return \%languages;
 }
 
 # Global variable for all the voices. Keys are human-readable.
+# "de" => "German"
 # Initialized using load_voices.
 my %voices;
 
 sub load_voices {
   my $app = shift;
-  my %voices;
+  %voices = ();
 
   open(my $fh, '-|', 'espeak --voices')
       or warn("Cannot determine espeak voices: $!");
@@ -83,12 +87,10 @@ sub load_voices {
     next unless $language =~ /^[a-z-]+$/;
     $name = join(' ', map { $_ eq 'en' ? 'English' : ucfirst }
 		 split(/[ _-]+/, $name));
-    $voices{$name} = $language;
+    $voices{$language} = $name;
     $app->log->info("Found voice $name");
   }
   close($fh);
-
-  return \%voices;
 }
 
 get '/' => sub {
@@ -98,8 +100,8 @@ get '/' => sub {
 
 get '/input' => sub {
   my $self = shift;
-  $self->stash(languages => [ map { [ $_ => $languages{$_} ] } sort keys %languages],
-	       voices => [ map { [ $_ => $voices{$_} ] } sort keys %voices]);
+  $self->stash(languages => [ map { [ $language_names{$_} => $_ ] } sort keys %language_names],
+	       voices => [ map { [ $voices{$_} => $_ ] } sort keys %voices]);
   $self->render('input');
 };
 
@@ -204,8 +206,8 @@ sub analysis_of {
   return ['correct', $word, $analysis];
 }
 
-%languages = %{load_languages(app)};
-%voices = %{load_voices(app)};
+load_languages(app);
+load_voices(app);
 app->start;
 
 __DATA__
