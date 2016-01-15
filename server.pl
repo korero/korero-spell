@@ -62,10 +62,10 @@ get '/' => sub {
   $self->render('index');
 } => 'main';
 
-get '/check' => sub {
+get '/input' => sub {
   my $self = shift;
   $self->stash(languages => [sort keys %languages]);
-  $self->render('check');
+  $self->render('input');
 };
 
 post '/check' => sub {
@@ -162,14 +162,14 @@ __DATA__
 Our emphasis is on minority languages.
 <p>Services:</p>
 <ul>
-<li><%= link_to 'Spell Checking' => 'check' %></li>
+<li><%= link_to 'Spell Checking and Text Reading' => 'input' %></li>
 </ul>
 
 
-@@ check.html.ep
+@@ input.html.ep
 % layout 'default';
-% title 'Korero Spell Checking';
-<h1>Spell Checking</h1>
+% title 'Korero Spell Checking and Text Reading';
+<h1>Spell Checking and Text Reading</h1>
 <p>
 Back to the <%= link_to 'main page' => 'main' %>.
 <form method="POST" action="/check">
@@ -178,7 +178,7 @@ Back to the <%= link_to 'main page' => 'main' %>.
 <label for="lang">Languages:</label>
 %= select_field lang => [@$languages]
 <p>
-<input type="submit">
+<button>Spell Check</button>
 </form>
 
 
@@ -193,7 +193,7 @@ function replace(id, event) {
 % end
 <h1>Spell Checking</h1>
 <p>
-Check a <%= link_to 'different text' => 'check' %> or go back to <%= link_to 'main page' => 'main' %>.
+Check a <%= link_to 'different text' => 'input' %> or go back to <%= link_to 'main page' => 'main' %>.
 %# onclick="" added so that iOS will react to :hover (and remove it from the menu)
 <p class='result' onclick="">
 % for my $token (@$result) {
