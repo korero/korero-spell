@@ -1,9 +1,9 @@
 # Using It
 
 Using the web interface is very easy and you can do that on the
-[Korero](http://korero.org/) website.
+[Korero](https://korero.org/) website.
 
-If you want to write an application that needs do do spell checking,
+If you want to write an application that needs to do spell checking,
 you can use our JSON interface. Use a POST request and provide the
 following:
 
@@ -14,7 +14,7 @@ following:
 Here's how to test it from the command line:
 
 ```
-curl http://korero.org/check \
+curl https://korero.org/check \
      --form text="Ein Mensch und eine Fliege im Raum" \
      --form lang="en-US" \
 	 --form format=json
@@ -31,6 +31,20 @@ The Result in this case – given that the text is in German and the language re
   "im":    ["mi","um","om","in","i","m","ism","aim","rim","dim","imp","him","vim","Sim","Tim"],
   "Fliege":["Liege","F liege","Flinger","Flier","Fledge","Flicker","Flexed"]
 }
+```
+
+If you want to write an application that needs generate some voice audio,
+use a POST request and provide the following:
+
+* `text` is the text to check
+* `voice` is the voice to use (based on `espeak --voice`)
+
+Here's how to test it from the command line:
+
+```
+curl https://korero.org/say \
+     --form text="Ein Mensch und eine Fliege im Raum" \
+     --form voice="de"
 ```
 
 # Running It
@@ -127,7 +141,7 @@ check process korero-spell with pidfile /home/alex/korero.org/hypnotoad.pid
 ## On Debian
 
 ```
-sudo apt-get install libmojolicious-perl libtext-hunspell-perl
+sudo apt-get install libmojolicious-perl libtext-hunspell-perl espeak lame
 ```
 
 Note that `libmojolicious-perl` is too old on Debian Wheezy. You can
@@ -136,6 +150,7 @@ latest from CPAN:
 
 ```
 cpan Mojolicious
+cpan Mojolicious::Plugin::RenderFile
 ```
 
 You also need to install some dictionaries. These should all end up in
@@ -158,9 +173,13 @@ recognize a valid language.
 
 ## On a Mac
 
-### Hunspell using Homebrew
+If you're using [Homebrew](http://brew.sh/), things should be easy.
 
-If you're using [Homebrew](http://brew.sh/), `brew install hunspell`
+Use `brew install espeak lame` to install
+[eSpeak](http://espeak.sourceforge.net/)
+and [LAME](http://lame.sourceforge.net/).
+
+Use `brew install hunspell` to install the spell checker
 and note the following:
 
 ```
@@ -182,7 +201,7 @@ The files will all be in
 `/Applications/LibreOffice.app/Contents/share/extensions/dict-*` and
 the files will end in `*.aff` and `*.dic`.
 
-### Perl using Perlbrew
+### Perlbrew
 
 I'm using [Perlbrew](http://perlbrew.pl/) to install a new Perl and
 run it alongside the system default. If you follow the instructions,
@@ -197,7 +216,7 @@ no longer rely on the shebang line `#!/usr/bin/perl` – you'll be using
 something like
 `#!/Users/alex/perl5/perlbrew/perls/perl-5.18.2/bin/perl` instead.
 
-### Text::Hunspell using CPAN
+### Text::Hunspell
 
 When installing from CPAN, `Text::Hunspell` wouldn't install:
 
@@ -233,9 +252,9 @@ alex@Megabombus:~/.cpan/build/Text-Hunspell-2.11-XRrGMO$ make install
 ...
 ```
 
-### Mojolicious using CPAN
+### Mojolicious
 
 ```
 cpan Mojolicious
+cpan Mojolicious::Plugin::RenderFile
 ```
-

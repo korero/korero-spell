@@ -1,16 +1,23 @@
 #!/usr/bin/env perl
 use Mojolicious::Lite;
 use Mojo::Home;
+use I18N::LangTags::List;
 use Text::Hunspell;
+use File::Temp qw/tempfile/;
 use Encode;
 use utf8;
 
 app->config(hypnotoad => {listen => ['http://*:8081']});
 
+plugin 'RenderFile';
+
 # Directories to look for dictionaries.
 # Earlier directories have precedence.
 my $home = Mojo::Home->new;
 $home->detect;
+
+# The path where espeak and lame can be found.
+$ENV{PATH} = '/usr/bin:/usr/local/bin';
 
 my @hunspell_dir = (
   # Our own Korero dictionaries
@@ -24,6 +31,7 @@ my @hunspell_dir = (
     );
 
 # Global variable for all the languages and the location of their files.
+# Keys are human-readable.
 # Initialized using load_languages.
 my %languages;
 
@@ -47,6 +55,7 @@ sub load_languages {
     my $label = $dic;
     $label =~ s/.*\///;
     $label =~ s/_/-/g;
+    $label = I18N::LangTags::List::name($label) if $label =~ /^[a-z]+(-[a-zA-Z]+)?$/;
     $languages{$label} = $dic;
     $app->log->info("Found dictionary $label");
   }
@@ -57,6 +66,29 @@ sub load_languages {
   return \%languages;
 }
 
+# Global variable for all the voices. Keys are human-readable.
+# Initialized using load_voices.
+my %voices;
+
+sub load_voices {
+  my $app = shift;
+  my %voices;
+
+  open(my $fh, '-|', 'espeak --voices')
+      or warn("Cannot determine espeak voices: $!");
+  while(<$fh>) {
+    my ($pty, $language, $gender, $name) = split;
+    next unless $language =~ /^[a-z-]+$/;
+    $name = join(' ', map { $_ eq 'en' ? 'English' : ucfirst }
+		 split(/[ _-]+/, $name));
+    $voices{$name} = $language;
+    $app->log->info("Found voice $name");
+  }
+  close($fh);
+
+  return \%voices;
+}
+
 get '/' => sub {
   my $self = shift;
   $self->render('index');
@@ -64,7 +96,8 @@ get '/' => sub {
 
 get '/input' => sub {
   my $self = shift;
-  $self->stash(languages => [sort keys %languages]);
+  $self->stash(languages => [ map { [ $_ => $languages{$_} ] } sort keys %languages],
+	       voices => [ map { [ $_ => $voices{$_} ] } sort keys %voices]);
   $self->render('input');
 };
 
@@ -127,6 +160,30 @@ post '/check' => sub {
   $self->render(template => 'result', result => \@tokens);
 };
 
+post '/say' => sub {
+  my $self = shift;
+  my $text = $self->param('text');
+  my $voice = $self->param('voice') || 'en';
+  $voice =~ /^[a-z-]+$/
+      or die "Illegal voice: $voice";
+  my ($out, $outname) = tempfile();
+
+  open(my $fh, "| espeak -v $voice --stdin --stdout | lame - $outname")
+      or die "Cannot fork espeak/lame: $?";
+  local $SIG{$fh} = sub { die "Pipe to espeak/lame broke" };
+
+  print $fh $text;
+
+  $self->app->types->type(mp3 => 'audio/mpeg');
+  return $self->render_file(
+    'filepath' => $outname,
+    'filename' => 'say-it.mp3',
+    'format'   => 'mp3',
+    'content_disposition' => 'inline',
+    'cleanup' => 1,
+    );
+};
+
 sub suggestions_for {
   my ($self, $speller, $encoding, $encoded, $word) = @_;
   my @suggestions = $speller->suggest($encoded);
@@ -146,6 +203,7 @@ sub analysis_of {
 }
 
 %languages = %{load_languages(app)};
+%voices = %{load_voices(app)};
 app->start;
 
 __DATA__
@@ -172,13 +230,16 @@ Our emphasis is on minority languages.
 <h1>Spell Checking and Text Reading</h1>
 <p>
 Back to the <%= link_to 'main page' => 'main' %>.
-<form method="POST" action="/check">
+<form method="POST">
 <textarea name='text' autofocus='autofocus' required='required' maxlength='10000'></textarea>
 <p>
 <label for="lang">Languages:</label>
 %= select_field lang => [@$languages]
+<button formaction='/check'>Spell Check</button>
 <p>
-<button>Spell Check</button>
+<label for="voice">Voices:</label>
+%= select_field voice => [@$voices]
+<button formaction='/say'>Say</button>
 </form>
 
 
@@ -233,6 +294,9 @@ body {
   top: 0;
   right: 2em;
 }
+label { width: 10ex; display: inline-block; }
+select { width: 30ex; }
+button { width: 15ex; }
 .result {
   border: 1px solid #333;
   padding: 0 1ex;
