@@ -172,9 +172,9 @@ post '/say' => sub {
       or die "Illegal voice: $voice";
   my ($out, $outname) = tempfile();
 
-  open(my $fh, "| espeak -v $voice --stdin --stdout | lame - $outname")
+  open(my $fh, "| espeak -v $voice --stdin --stdout | lame --preset voice - $outname")
       or die "Cannot fork espeak/lame: $?";
-  local $SIG{$fh} = sub { die "Pipe to espeak/lame broke" };
+  local $SIG{PIPE} = sub { die "Pipe to espeak/lame broke" };
 
   print $fh $text;
 
