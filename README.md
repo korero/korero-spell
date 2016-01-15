@@ -44,7 +44,7 @@ Here's how to test it from the command line:
 ```
 curl https://korero.org/say \
      --form text="Ein Mensch und eine Fliege im Raum" \
-     --form voice="de"
+     --form voice="de" | mpg321 -
 ```
 
 # Running It
@@ -136,7 +136,8 @@ check process korero-spell with pidfile /home/alex/korero.org/hypnotoad.pid
 1. Hunspell
 2. Text::Hunspell from CPAN
 3. [Mojolicious](http://mojolicio.us/)
-
+4. [eSpeak](http://espeak.sourceforge.net/)
+5. [LAME](http://lame.sourceforge.net/)
 
 ## On Debian
 
