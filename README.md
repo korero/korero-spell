@@ -113,6 +113,36 @@ Reload your Apache config using `sudo service apache2 graceful`.
 This is based on the
 [Mojolicious Cookbook](http://mojolicio.us/perldoc/Mojolicious/Guides/Cookbook#Apache-mod_proxy).
 
+Or, once we got our SSL setup from [Let’s Encrypt](https://letsencrypt.org/):
+
+```
+<VirtualHost *:80>
+    ServerName korero.org
+    Redirect permanent / https://korero.org/
+</VirtualHost>
+<VirtualHost *:443>
+    ServerAdmin kensanata@gmail.com
+    ServerName korero.org
+    DocumentRoot /home/alex/korero.org
+    <Directory /home/alex/korero.org>
+        Options None
+        AllowOverride None
+        Order Deny,Allow
+        Allow from all
+    </Directory>
+
+    ProxyPass /.well-known !
+    ProxyPass / http://korero.org:8081/ keepalive=On
+    RequestHeader set X-Forwarded-Proto "http"
+
+    SSLEngine on
+    SSLCertificateFile      /etc/letsencrypt/live/korero.org/cert.pem
+    SSLCertificateKeyFile   /etc/letsencrypt/live/korero.org/privkey.pem
+    SSLCertificateChainFile /etc/letsencrypt/live/korero.org/chain.pem
+    SSLVerifyClient None
+</VirtualHost>
+```
+
 And finally, if you're using [Monit](https://mmonit.com/monit/) to
 monitor your server, here's an example of how you could set it up
 including statements to start and stop the server.
@@ -130,11 +160,10 @@ check process korero-spell with pidfile /home/alex/korero.org/hypnotoad.pid
     if 3 restarts within 15 cycles then timeout
 ```
 
-
 # Dependencies
 
-1. Hunspell
-2. Text::Hunspell from CPAN
+1. [Hunspell](http://hunspell.sourceforge.net/)
+2. [Text::Hunspell](https://metacpan.org/release/Text-Hunspell)
 3. [Mojolicious](http://mojolicio.us/)
 4. [eSpeak](http://espeak.sourceforge.net/)
 5. [LAME](http://lame.sourceforge.net/)
@@ -151,6 +180,11 @@ latest from CPAN:
 
 ```
 cpan Mojolicious
+```
+
+You also need the RenderFile plugin.
+
+```
 cpan Mojolicious::Plugin::RenderFile
 ```
 
@@ -170,7 +204,6 @@ sudo apt-get install hunspell-an hunspell-ar hunspell-be \
 This will result in files like `de_CH.dic` and `de_CH.aff` in
 `/usr/share/hunspell`. We need both of these files in order to
 recognize a valid language.
-
 
 ## On a Mac
 
