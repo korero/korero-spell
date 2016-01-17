@@ -347,6 +347,6 @@ textarea {
 <%= content %>
 <hr>
 <p>
-<%= link_to 'Korero' => 'main' %>&#x2003;<a href="mailto:kensanata@gmail.com">Alex Schroeder</a>&#x2003;<a href="https://github.com/korero/korero-spell">Source on GitHub</a>
+<%= link_to 'Korero' => 'main' %>&#x2003;<a href="https://alexschroeder.ch/wiki/Contact">Alex Schroeder</a>&#x2003;<a href="https://github.com/korero/korero-spell">Source on GitHub</a>
 </body>
 </html>
