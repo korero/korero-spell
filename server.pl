@@ -293,11 +293,6 @@ body {
   padding: 1em;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
-#logo {
-  position: absolute;
-  top: 0;
-  right: 2em;
-}
 label { width: 10ex; display: inline-block; }
 select { width: 30ex; }
 button { width: 15ex; }
@@ -349,10 +344,9 @@ textarea {
 <meta name="viewport" content="width=device-width">
 </head>
 <body>
-<p id="logo"><%= link_to 'Korero' => 'main' %></p>
 <%= content %>
 <hr>
 <p>
-<a href="mailto:kensanata@gmail.com">Alex Schroeder</a>&#x2003;<a href="https://github.com/korero/korero-spell">Source on GitHub</a>
+<%= link_to 'Korero' => 'main' %>&#x2003;<a href="mailto:kensanata@gmail.com">Alex Schroeder</a>&#x2003;<a href="https://github.com/korero/korero-spell">Source on GitHub</a>
 </body>
 </html>
