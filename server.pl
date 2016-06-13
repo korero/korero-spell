@@ -7,8 +7,6 @@ use File::Temp qw/tempfile/;
 use Encode;
 use utf8;
 
-app->config(hypnotoad => {listen => ['http://*:8081']});
-
 plugin 'RenderFile';
 
 # Directories to look for dictionaries.
