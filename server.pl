@@ -1,20 +1,17 @@
 #!/usr/bin/env perl
 use Mojolicious::Lite;
-use Mojo::Home;
+use FindBin;
 use I18N::LangTags::List;
 use Text::Hunspell;
 use File::Temp qw/tempfile/;
 use Encode;
 use utf8;
 
-app->config(hypnotoad => {listen => ['http://*:8081']});
-
 plugin 'RenderFile';
 
 # Directories to look for dictionaries.
 # Earlier directories have precedence.
-my $home = Mojo::Home->new;
-$home->detect;
+my $home = "$FindBin::Bin";
 
 # The path where espeak and lame can be found.
 $ENV{PATH} = '/usr/bin:/usr/local/bin';
