@@ -72,12 +72,10 @@ which is part of [Mojolicious](http://mojolicio.us/).
 hypnotoad server.pl
 ```
 
-Verify that it is working by visiting `http://localhost:8081`.  Port
-8080 is the default port for Hypnotoad but `server.pl` changes the
-port to 8081.
+Verify that it is working by visiting `http://localhost:8080`.
 
 If you're using Apache, configure your virtual server to act as a
-proxy and pass requests through to port 8081. Make sure you have
+proxy and pass requests through to port 8080. Make sure you have
 `mod_proxy` and `mod_proxy_http`enabled.  Our setup also uses an extra
 header. Thus, you also need `mod_headers`.
 
@@ -93,72 +91,39 @@ ours:
 
 ```
 <VirtualHost *:80>
-    ServerAdmin kensanata@gmail.com
-    ServerName korero.org
-    ServerAlias www.korero.org
-    <Proxy *>
-	Order deny,allow
-	Allow from all
-    </Proxy>
-    ProxyRequests Off
-    ProxyPreserveHost On
-    ProxyPass / http://korero.org:8081/ keepalive=On
-    ProxyPassReverse / http://korero.org:8081/
-    RequestHeader set X-Forwarded-Proto "http"
+  ServerName korero.org
+  Redirect permanent / https://korero.org/
 </VirtualHost>
+<VirtualHost *:443>
+  ServerAdmin kensanata@gmail.com
+  ServerName korero.org
+  DocumentRoot /home/alex/korero.org
+  <Directory /home/alex/korero.org>
+	Options None
+	AllowOverride None
+	Order Deny,Allow
+	Allow from all
+  </Directory>
+
+  ProxyPass /.well-known !
+  ProxyPass / http://korero.org:8080/ keepalive=On
+  RequestHeader set X-Forwarded-Proto "http"
+
+  SSLEngine on
+  SSLCertificateFile      /etc/letsencrypt.sh/certs/korero.org/cert.pem
+  SSLCertificateKeyFile   /etc/letsencrypt.sh/certs/korero.org/privkey.pem
+  SSLCertificateChainFile /etc/letsencrypt.sh/certs/korero.org/chain.pem
+  SSLVerifyClient None
+</VirtualHost>
+																							
 ```
 
 Reload your Apache config using `sudo service apache2 graceful`.
 
 This is based on the
-[Mojolicious Cookbook](http://mojolicio.us/perldoc/Mojolicious/Guides/Cookbook#Apache-mod_proxy).
-
-Or, once we got our SSL setup from [Let’s Encrypt](https://letsencrypt.org/):
-
-```
-<VirtualHost *:80>
-    ServerName korero.org
-    Redirect permanent / https://korero.org/
-</VirtualHost>
-<VirtualHost *:443>
-    ServerAdmin kensanata@gmail.com
-    ServerName korero.org
-    DocumentRoot /home/alex/korero.org
-    <Directory /home/alex/korero.org>
-        Options None
-        AllowOverride None
-        Order Deny,Allow
-        Allow from all
-    </Directory>
-
-    ProxyPass /.well-known !
-    ProxyPass / http://korero.org:8081/ keepalive=On
-    RequestHeader set X-Forwarded-Proto "http"
-
-    SSLEngine on
-    SSLCertificateFile      /etc/letsencrypt/live/korero.org/cert.pem
-    SSLCertificateKeyFile   /etc/letsencrypt/live/korero.org/privkey.pem
-    SSLCertificateChainFile /etc/letsencrypt/live/korero.org/chain.pem
-    SSLVerifyClient None
-</VirtualHost>
-```
-
-And finally, if you're using [Monit](https://mmonit.com/monit/) to
-monitor your server, here's an example of how you could set it up
-including statements to start and stop the server.
-
-```
-## http://www.howtoforge.com/server-monitoring-with-munin-and-monit-on-debian-wheezy-p2
-
-# Only restart when the website is unreachable for 10 minutes!
-check process korero-spell with pidfile /home/alex/korero.org/hypnotoad.pid
-    start program = "/usr/bin/hypnotoad /home/alex/korero.org/server.pl"
-    stop program = "/usr/bin/hypnotoad --stop /home/alex/korero.org/server.pl"
-    if failed host localhost port 8081 type tcp protocol http
-      and request "/" for 5 cycles then restart
-    if totalmem > 500 MB for 5 cycles then restart
-    if 3 restarts within 15 cycles then timeout
-```
+[Mojolicious Cookbook](http://mojolicio.us/perldoc/Mojolicious/Guides/Cookbook#Apache-mod_proxy),
+The SSL setup from [Let’s Encrypt](https://letsencrypt.org/)
+using [letsencrypt.sh](https://github.com/lukas2511/letsencrypt.sh).
 
 # Dependencies
 
