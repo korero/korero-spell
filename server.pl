@@ -61,7 +61,7 @@ sub load_languages {
       $language_names{$code} = I18N::LangTags::List::name($code) || $code;
     }
 
-    $app->log->info("Found dictionary $code");
+    $app->log->info("Found dictionary $language_names{$code} ($code)");
   }
 
   die "Cannot find Hunspell dictionaries in any of the following directories:\n  "
@@ -207,6 +207,8 @@ sub analysis_of {
   return ['correct', $word, $analysis];
 }
 
+app->log->level('info');
+app->log->info("Looking at $home");
 load_languages(app);
 load_voices(app);
 app->start;
