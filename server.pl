@@ -292,7 +292,7 @@ body {
 }
 label { width: 10ex; display: inline-block; }
 select { width: 30ex; }
-button { width: 15ex; }
+button { width: 20ex; }
 .result {
   border: 1px solid #333;
   padding: 0 1ex;
@@ -337,6 +337,7 @@ textarea {
  width: 100%;
  height: 30em;
 }
+
 % end
 <meta name="viewport" content="width=device-width">
 </head>
