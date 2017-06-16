@@ -97,8 +97,12 @@ get '/' => sub {
 
 get '/input' => sub {
   my $self = shift;
-  $self->stash(languages => [ map { [ $language_names{$_} => $_ ] } sort keys %language_names],
-	       voices => [ map { [ $voices{$_} => $_ ] } sort keys %voices]);
+  $self->stash(languages => [ map { [ $language_names{$_} => $_ ] }
+			      sort { $language_names{$a} cmp $language_names{$b} }
+			      keys %language_names ],
+	       voices => [ map { [ $voices{$_} => $_ ] }
+			   sort { $voices{$a} cmp $voices{$b} }
+			   keys %voices ] );
   $self->render('input');
 };
 
