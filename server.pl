@@ -7,8 +7,6 @@ use File::Temp qw/tempfile/;
 use Encode;
 use utf8;
 
-plugin 'RenderFile';
-
 # Directories to look for dictionaries.
 # Earlier directories have precedence.
 my $home = "$FindBin::Bin";
@@ -180,14 +178,16 @@ post '/say' => sub {
 
   print $fh $text;
 
-  $self->app->types->type(mp3 => 'audio/mpeg');
-  return $self->render_file(
-    'filepath' => $outname,
-    'filename' => 'say-it.mp3',
-    'format'   => 'mp3',
-    'content_disposition' => 'inline',
-    'cleanup' => 1,
-    );
+  my $asset = Mojo::Asset::File->new( path => $outname );
+  $asset->cleanup(1);
+
+  my $headers = $self->res->content->headers();
+  $headers->add('Content-Type', 'audio/mpeg');
+  $headers->add('Content-Length' => $asset->size);
+
+  # Stream content directly from file
+  $self->res->content->asset($asset);
+  return $self->rendered(200);
 };
 
 sub suggestions_for {

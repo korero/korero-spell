@@ -134,7 +134,7 @@ using [letsencrypt.sh](https://github.com/lukas2511/letsencrypt.sh).
 4. [eSpeak](http://espeak.sourceforge.net/)
 5. [LAME](http://lame.sourceforge.net/)
 
-## On Debian
+## Debian
 
 ```
 sudo apt-get install libmojolicious-perl libtext-hunspell-perl espeak lame
@@ -146,12 +146,6 @@ latest from CPAN:
 
 ```
 cpan Mojolicious
-```
-
-You also need the RenderFile plugin.
-
-```
-cpan Mojolicious::Plugin::RenderFile
 ```
 
 You also need to install some dictionaries. These should all end up in
@@ -171,7 +165,7 @@ This will result in files like `de_CH.dic` and `de_CH.aff` in
 `/usr/share/hunspell`. We need both of these files in order to
 recognize a valid language.
 
-## On a Mac
+## Mac
 
 If you're using [Homebrew](http://brew.sh/), things should be easy.
 
@@ -256,5 +250,4 @@ alex@Megabombus:~/.cpan/build/Text-Hunspell-2.11-XRrGMO$ make install
 
 ```
 cpan Mojolicious
-cpan Mojolicious::Plugin::RenderFile
 ```
