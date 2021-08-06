@@ -183,7 +183,6 @@ post '/say' => sub {
   $self->app->types->type(mp3 => 'audio/mpeg');
   return $self->render_file(
     'filepath' => $outname,
-    'filename' => 'say-it.mp3',
     'format'   => 'mp3',
     'content_disposition' => 'inline',
     'cleanup' => 1,
