@@ -164,32 +164,30 @@ post '/check' => sub {
   $self->render(template => 'result', result => \@tokens);
 };
 
-get '/say' => sub {
-  my $self = shift;
-  my $outname = $self->flash('file') or return $self->redirect_to('input');
-  my $asset = Mojo::Asset::File->new(path => $outname);
-  $asset->cleanup(1);
-  my $headers = $self->res->content->headers();
-  $headers->add('Content-Type', 'audio/mpeg');
-  $headers->add('Content-Length' => $asset->size);
-  # Stream content directly from file
-  $self->res->content->asset($asset);
-  return $self->rendered(200);
-};
-
-
 post '/say' => sub {
   my $self = shift;
-  my $text = $self->param('text') or return $self->redirect_to('input');
+  my $text = $self->param('text');
   my $voice = $self->param('voice') || 'en';
-  $voice =~ /^[a-z-]+$/ or die "Illegal voice: $voice";
-  my ($out, $outname) = tempfile("koreroXXXXXX", UNLINK => 0);
+  $voice =~ /^[a-z-]+$/
+      or die "Illegal voice: $voice";
+  my ($out, $outname) = tempfile();
+
   open(my $fh, "| espeak -v $voice --stdin --stdout | lame --quiet --preset voice - $outname")
       or die "Cannot fork espeak/lame: $?";
   local $SIG{PIPE} = sub { die "Pipe to espeak/lame broke" };
+
   print $fh $text;
-  $self->flash('file' => $outname);
-  $self->redirect_to('say');
+
+  my $asset = Mojo::Asset::File->new( path => $outname );
+  $asset->cleanup(1);
+
+  my $headers = $self->res->content->headers();
+  $headers->add('Content-Type', 'audio/mpeg');
+  $headers->add('Content-Length' => $asset->size);
+
+  # Stream content directly from file
+  $self->res->content->asset($asset);
+  return $self->rendered(200);
 };
 
 sub suggestions_for {
