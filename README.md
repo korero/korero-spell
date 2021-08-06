@@ -1,7 +1,9 @@
-# Using It
+# Korero
 
 Using the web interface is very easy and you can do that on the
 [Korero](https://korero.org/) website.
+
+## API
 
 If you want to write an application that needs to do spell checking,
 you can use our JSON interface. Use a POST request and provide the
@@ -47,7 +49,7 @@ curl https://korero.org/say \
      --form voice="de" | mpg321 -
 ```
 
-# Running It
+## Installation
 
 This application uses [Mojolicious](http://mojolicio.us/).
 While you're developing the application:
@@ -62,8 +64,7 @@ server. You just need to reload the page to see any changes you made.
 
 Learn more: [Mojolicious::Guides::Tutorial](http://mojolicio.us/perldoc/Mojolicious/Guides/Tutorial).
 
-
-# Deploying It
+## Deployment
 
 Use [Hypnotoad](http://mojolicio.us/perldoc/Mojo/Server/Hypnotoad)
 which is part of [Mojolicious](http://mojolicio.us/).
@@ -125,7 +126,7 @@ This is based on the
 The SSL setup from [Let’s Encrypt](https://letsencrypt.org/)
 using [letsencrypt.sh](https://github.com/lukas2511/letsencrypt.sh).
 
-# Dependencies
+## Dependencies
 
 1. [Hunspell](http://hunspell.sourceforge.net/)
 2. [Text::Hunspell](https://metacpan.org/release/Text-Hunspell)
@@ -200,7 +201,7 @@ The files will all be in
 `/Applications/LibreOffice.app/Contents/share/extensions/dict-*` and
 the files will end in `*.aff` and `*.dic`.
 
-### Perlbrew
+## Perlbrew
 
 I'm using [Perlbrew](http://perlbrew.pl/) to install a new Perl and
 run it alongside the system default. If you follow the instructions,
@@ -215,7 +216,7 @@ no longer rely on the shebang line `#!/usr/bin/perl` – you'll be using
 something like
 `#!/Users/alex/perl5/perlbrew/perls/perl-5.18.2/bin/perl` instead.
 
-### Text::Hunspell
+## Text::Hunspell
 
 When installing from CPAN, `Text::Hunspell` wouldn't install:
 
@@ -251,7 +252,7 @@ alex@Megabombus:~/.cpan/build/Text-Hunspell-2.11-XRrGMO$ make install
 ...
 ```
 
-### Mojolicious
+## Mojolicious
 
 ```
 cpan Mojolicious
