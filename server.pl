@@ -58,8 +58,9 @@ sub load_languages {
     $languages{$code} = $dic;
 
     if ($code =~ /^[a-z]+(-[a-zA-Z]+)?$/) {
-      $language_names{$code} = I18N::LangTags::List::name($code) || $code;
+      $language_names{$code} = I18N::LangTags::List::name($code);
     }
+    $language_names{$code} ||= $code;
 
     $app->log->info("Found dictionary $language_names{$code} ($code)");
   }
